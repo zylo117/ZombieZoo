@@ -58,7 +58,7 @@ def login(user_name, password):
             break
 
 
-def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval=1):
+def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval=1.0):
     # select Find
     pyautogui.click(430, 40)
     time.sleep(interval)
@@ -159,16 +159,67 @@ def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval
     pyautogui.press("enter")
     time.sleep(interval)
     pyautogui.typewrite("y")
-    time.sleep(interval)
+    time.sleep(interval * 2)
     pyautogui.press("enter")
     time.sleep(interval)
     pyautogui.press("esc")
     time.sleep(interval)
     pyautogui.press("enter")
 
+def get_material_data(process, procedure, from_time, to_time, save_path, interval=1):
+    # select Find
+    pyautogui.click(430, 40)
+    time.sleep(interval)
+    # select material output
+    for i in range(12):
+        pyautogui.press("down")
+    pyautogui.press("enter")
+
+    # time
+    pyautogui.click(156, 116)
+    time.sleep(interval)
+    pyautogui.typewrite(from_time[0])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(from_time[1])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(from_time[2])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(from_time[3])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(from_time[4])
+    pyautogui.press("right")
+    pyautogui.click(644, 108)
+    pyautogui.typewrite(from_time[5])
+    time.sleep(interval)
+
+    # enter to_time
+    pyautogui.press("tab")
+    pyautogui.click(328, 116)
+    pyautogui.typewrite(to_time[0])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(to_time[1])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(to_time[2])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(to_time[3])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(to_time[4])
+    time.sleep(interval)
+    pyautogui.press("right")
+    pyautogui.typewrite(to_time[5])
+    time.sleep(interval)
 
 if __name__ == "__main__":
     program_path = "../target_program/MES/StartCenter.exe"
     open_pg(program_path)
     login("5117006014", "oit")
-    get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/20/01/01/01", "c:\\temp\\fuck.csv", interval=0.5)
+    #get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/20/01/01/01", "c:\\temp\\fuck.csv", interval=0.5)
+    get_material_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/20/01/01/01", "c:\\temp\\fuck.csv", interval=0.5)

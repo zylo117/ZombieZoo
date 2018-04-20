@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zombie/fake_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zombie/program_operation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zombie/realtime_mouse_pos_monitor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zombie/window_operation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/job_list.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,10 +49,12 @@
       <file leaf-file-name="job_list.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/job_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="172" column="30" lean-forward="true" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+            <state relative-caret-position="136">
+              <caret line="199" column="24" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#182#730#0" />
+                <element signature="e#769#1490#0" />
               </folding>
             </state>
           </provider>
@@ -279,7 +276,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2948237" />
@@ -287,7 +284,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.22580644" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.18446602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -383,6 +380,8 @@
           <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#182#730#0" />
+            <element signature="e#769#1490#0" />
           </folding>
         </state>
       </provider>
@@ -549,10 +548,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/job/job_list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="172" column="30" lean-forward="true" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+        <state relative-caret-position="136">
+          <caret line="199" column="24" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#182#730#0" />
+            <element signature="e#769#1490#0" />
           </folding>
         </state>
       </provider>
