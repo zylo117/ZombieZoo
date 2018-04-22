@@ -32,4 +32,10 @@ if __name__ == "__main__":
     ircf_csv_path = data_path + "ircf.csv"
     ircf_data = pd.read_csv(ircf_csv_path)
 
+    ircf_aa = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
+    ircf_aa_lens = pd.merge(ircf_aa, len_data, how="left", left_on="材料批号_y", right_on="在制品代码")
+    ircf_aa_lens_gfc = pd.merge(ircf_aa_lens, gfc_data, how="left", left_on="在制品代码_x", right_on="在制品代码").fillna(0)
+
+    ircf_aa_lens_gfc.to_csv(data_path + "out.csv", encoding="gbk")
+
     print(0)

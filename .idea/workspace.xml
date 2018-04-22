@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/job/job_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/job_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/analyze_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/analyze_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,49 +14,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="program_operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zombie/program_operation.py">
+      <file leaf-file-name="analyze_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/job/analyze_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="realtime_mouse_pos_monitor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zombie/realtime_mouse_pos_monitor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="303">
+              <caret line="38" column="66" lean-forward="true" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="window_operation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
+      <file leaf-file-name="series.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-              <folding>
-                <element signature="e#47#62#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="2896" column="8" selection-start-line="2896" selection-start-column="8" selection-end-line="2896" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="job_list.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/job/job_list.py">
+      <file leaf-file-name="frame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="199" column="24" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#182#730#0" />
-                <element signature="e#769#1490#0" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="1433" column="33" selection-start-line="1433" selection-start-column="33" selection-end-line="1433" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -75,7 +59,13 @@
       <find>tab</find>
       <find>enter</find>
       <find>MouseMask</find>
+      <find>,</find>
+      <find>G</find>
     </findStrings>
+    <replaceStrings>
+      <replace>&quot;,</replace>
+      <replace>&quot;G</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,12 +82,13 @@
         <option value="$PROJECT_DIR$/zombie/window_operation.py" />
         <option value="$PROJECT_DIR$/zombie/realtime_mouse_pos_monitor.py" />
         <option value="$PROJECT_DIR$/job/job_list.py" />
+        <option value="$PROJECT_DIR$/job/analyze_data.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="y" value="23" />
+    <option name="x" value="4" />
+    <option name="y" value="27" />
     <option name="width" value="1358" />
     <option name="height" value="745" />
   </component>
@@ -109,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.job_list">
+  <component name="RunManager" selected="Python.analyze_data">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,6 +165,24 @@
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
     </configuration>
+    <configuration name="analyze_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ZombieZoo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/analyze_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="job_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,7 +195,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/job_list.py" />
+      <option name="SCRIPT_NAME" value="D:\workspace\ZombieZoo\job\get_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -247,14 +256,16 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Jupyter Notebook.ZombieZoo" />
       <item itemvalue="Python.window" />
       <item itemvalue="Python.job_list" />
-      <item itemvalue="Jupyter Notebook.ZombieZoo" />
       <item itemvalue="Python.window_operation" />
       <item itemvalue="Python.realtime_mouse_pos_monitor" />
+      <item itemvalue="Python.analyze_data" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.analyze_data" />
         <item itemvalue="Python.job_list" />
         <item itemvalue="Python.realtime_mouse_pos_monitor" />
         <item itemvalue="Python.window_operation" />
@@ -279,40 +290,40 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2948237" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24984106" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.18446602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.27877948" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39898133" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3259362" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.22580644" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2948237" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24984106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39898133" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3293718" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.27877948" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3259362" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -324,15 +335,54 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/job/job_list.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/job/analyze_data.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zombie/program_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/realtime_mouse_pos_monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding>
+            <element signature="e#47#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3456">
+          <caret line="199" column="24" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#201#749#0" />
+            <element signature="e#788#1509#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -351,13 +401,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2106">
-          <caret line="117" column="4" lean-forward="true" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/window.py" />
     <entry file="file://C:/Program Files/Python36/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15534">
@@ -366,22 +410,16 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/subprocess.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#86#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/job/job_list.py">
+    <entry file="file://$PROJECT_DIR$/job/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#182#730#0" />
-            <element signature="e#769#1490#0" />
+            <element signature="e#201#749#0" />
+            <element signature="e#788#1509#0" />
           </folding>
         </state>
       </provider>
@@ -393,13 +431,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/window.py" />
     <entry file="file://C:/Program Files/Python36/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -420,13 +452,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/test.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/test.ipynb" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1120166012/win32gui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -451,16 +477,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/mouse_pos.ui">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/mouse_pos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/mouse_pos.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1120166012/PyQt5/QtGui/QNativeGestureEvent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -518,17 +535,11 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/subprocess.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#86#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/zombie/realtime_mouse_pos_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="162">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -538,7 +549,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="234">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
           <folding>
             <element signature="e#47#62#0" expanded="true" />
@@ -546,14 +557,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job/job_list.py">
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pymsgbox/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="199" column="24" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
+        <state relative-caret-position="-309">
+          <caret line="103" column="50" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="264" selection-start-line="264" selection-end-line="264" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#182#730#0" />
-            <element signature="e#769#1490#0" />
+            <element signature="e#201#749#0" />
+            <element signature="e#788#1509#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="324" selection-start-line="324" selection-end-line="324" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/numpy/core/numeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="423" column="4" selection-start-line="423" selection-start-column="4" selection-end-line="423" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/836067799/_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="715" selection-start-line="715" selection-end-line="715" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/numpy/lib/npyio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="735" column="21" selection-start-line="735" selection-start-column="21" selection-end-line="735" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="2896" column="8" selection-start-line="2896" selection-start-column="8" selection-end-line="2896" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="1433" column="33" selection-start-line="1433" selection-start-column="33" selection-end-line="1433" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/analyze_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="38" column="66" lean-forward="true" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
