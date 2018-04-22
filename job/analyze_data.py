@@ -38,4 +38,6 @@ if __name__ == "__main__":
 
     ircf_aa_lens_gfc.to_csv(data_path + "out.csv", encoding="gbk")
 
+    ircf_data.to_csv(data_path + "outfuck.csv", header=False, mode="a", encoding="gbk")
+
     print(0)

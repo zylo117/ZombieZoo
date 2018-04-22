@@ -140,3 +140,4 @@ $RECYCLE.BIN/
 target_program/*
 *.spec
 .idea/workspace.xml
+*.xml
