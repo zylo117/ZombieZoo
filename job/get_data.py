@@ -133,17 +133,13 @@ def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval
     time.sleep(interval)
 
     # start searching
-    pyautogui.press("f8")
-    # test if it's done searching
-    while True:
-        time.sleep(1)
-        screen = pyautogui.screenshot()
-        screen = screen.crop((100, 300, 200, 400))
-        screen = np.asarray(screen)
-        mean = np.mean(screen)
-        if mean < 255:
-            break
+    search()
 
+    # save result
+    save_data(interval, save_path)
+
+
+def save_data(interval, save_path):
     # save result
     time.sleep(interval)
     pyautogui.rightClick(120, 480)
@@ -166,7 +162,22 @@ def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval
     time.sleep(interval)
     pyautogui.press("enter")
 
-def get_material_data(process, procedure, from_time, to_time, save_path, interval=1):
+
+def search():
+    # start searching
+    pyautogui.press("f8")
+    # test if it's done searching
+    while True:
+        time.sleep(1)
+        screen = pyautogui.screenshot()
+        screen = screen.crop((100, 400, 200, 500))
+        screen = np.asarray(screen)
+        mean = np.mean(screen)
+        if mean < 255:
+            break
+
+
+def get_material_data(material_code, from_time, to_time, save_path, interval=1.0):
     # select Find
     pyautogui.click(430, 40)
     time.sleep(interval)
@@ -176,6 +187,10 @@ def get_material_data(process, procedure, from_time, to_time, save_path, interva
     pyautogui.press("enter")
 
     # time
+    # parse time
+    from_time = from_time.split("/")
+    to_time = to_time.split("/")
+    # enter from_time
     pyautogui.click(156, 116)
     time.sleep(interval)
     pyautogui.typewrite(from_time[0])
@@ -191,9 +206,6 @@ def get_material_data(process, procedure, from_time, to_time, save_path, interva
     time.sleep(interval)
     pyautogui.press("right")
     pyautogui.typewrite(from_time[4])
-    pyautogui.press("right")
-    pyautogui.click(644, 108)
-    pyautogui.typewrite(from_time[5])
     time.sleep(interval)
 
     # enter to_time
@@ -213,13 +225,40 @@ def get_material_data(process, procedure, from_time, to_time, save_path, interva
     pyautogui.press("right")
     pyautogui.typewrite(to_time[4])
     time.sleep(interval)
-    pyautogui.press("right")
-    pyautogui.typewrite(to_time[5])
+
+    # select material code
+    pyautogui.click(26, 148)
     time.sleep(interval)
+    pyautogui.click(190, 150)
+    time.sleep(interval)
+    # parse material code
+    code_set = ",".join(material_code)
+    pyautogui.typewrite(code_set)
+    time.sleep(interval)
+    pyautogui.press("enter")
+    time.sleep(interval)
+
+    # start searching
+    search()
+
+    # save result
+    save_data(interval, save_path)
+
 
 if __name__ == "__main__":
     program_path = "../target_program/MES/StartCenter.exe"
     open_pg(program_path)
     login("5117006014", "oit")
-    #get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/20/01/01/01", "c:\\temp\\fuck.csv", interval=0.5)
-    get_material_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/20/01/01/01", "c:\\temp\\fuck.csv", interval=0.5)
+
+    sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
+
+    get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/23/01/01/01", sava_path + "gfc.csv", interval=0.5)
+
+    lens_code = ["G-818-02093-GENIUS", "G-818-02093-LARGAN", "G-818-02093-OLM", "G-818-02093-KANTATSU"]
+    get_material_data(lens_code, "2018/04/17/01/01/00", "2018/04/19/01/01/00", sava_path + "lens.csv", interval=0.5)
+
+    aa_code = ["AACV125             1A", "AACV126             1A", "AACV127             1A", "AACV128             1A"]
+    get_material_data(aa_code, "2018/04/17/01/01/00", "2018/04/19/01/01/00", sava_path + "aa.csv", interval=0.5)
+
+    ircf_code = ["G-816-00424-AGC", "G-816-00424-PTOT"]
+    get_material_data(ircf_code, "2018/04/17/01/01/00", "2018/04/19/01/01/00", sava_path + "ircf.csv", interval=0.5)
