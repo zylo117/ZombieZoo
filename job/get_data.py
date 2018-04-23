@@ -67,7 +67,7 @@ def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval
         pyautogui.press("down")
     pyautogui.press("enter")
 
-    time.sleep(interval * 4)
+    test_ready()
 
     # select process
     pyautogui.click(20, 110)
@@ -169,6 +169,16 @@ def exit(interval):
     pyautogui.press("enter")
     time.sleep(interval * 2)
 
+def test_ready():
+    # test if it's ready searching
+    while True:
+        time.sleep(1)
+        screen = pyautogui.screenshot()
+        screen = screen.crop((100, 400, 200, 500))
+        screen = np.asarray(screen)
+        mean = np.mean(screen)
+        if mean == 255:
+            break
 
 def search():
     # start searching
@@ -193,7 +203,7 @@ def get_material_data(material_code, from_time, to_time, save_path, interval=1.0
         pyautogui.press("down")
     pyautogui.press("enter")
 
-    time.sleep(interval * 4)
+    test_ready()
 
     # time
     # parse time
