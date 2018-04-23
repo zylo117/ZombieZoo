@@ -106,7 +106,8 @@ class Window:
 
 if __name__ == "__main__":
     import time
-    window = Window("CMake") # support prefix auto match searching
+    window = Window("羽冠") # support prefix auto match searching
+    window.list_all_windows()
     window.move_windows(0, 0)
 
     window.bring_to_top()

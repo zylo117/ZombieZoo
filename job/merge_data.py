@@ -17,6 +17,11 @@ def read_csv_purepython(csv_path):
     return header, data
 
 
+def append_data(old_csv_path, new_csv_path, encoding="gbk"):
+    new_csv = pd.read_csv(new_csv_path)
+    new_csv.to_csv(old_csv_path, header=False, index=False, mode="a", encoding=encoding)
+
+
 if __name__ == "__main__":
     data_path = "c:\\temp\\"
 
@@ -38,6 +43,6 @@ if __name__ == "__main__":
 
     ircf_aa_lens_gfc.to_csv(data_path + "out.csv", encoding="gbk")
 
-    ircf_data.to_csv(data_path + "outfuck.csv", header=False, mode="a", encoding="gbk")
+    ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
 
     print(0)

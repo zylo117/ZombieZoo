@@ -161,6 +161,7 @@ def save_data(interval, save_path):
     pyautogui.press("esc")
     time.sleep(interval)
     pyautogui.press("enter")
+    time.sleep(interval)
 
 
 def search():
