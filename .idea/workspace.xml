@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/auto_get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/auto_get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/get_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="-152">
+              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -42,8 +40,8 @@
       <file leaf-file-name="get_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="187" column="26" selection-start-line="187" selection-start-column="26" selection-end-line="187" selection-end-column="26" />
+            <state relative-caret-position="402">
+              <caret line="205" column="23" selection-start-line="205" selection-start-column="23" selection-end-line="205" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#201#749#0" />
@@ -64,8 +62,8 @@
       <file leaf-file-name="auto_get_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="215">
+              <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -124,8 +122,8 @@
         <option value="$PROJECT_DIR$/zombie/window_operation.py" />
         <option value="$PROJECT_DIR$/job/merge_data.py" />
         <option value="$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/common.py" />
-        <option value="$PROJECT_DIR$/job/get_data.py" />
         <option value="$PROJECT_DIR$/job/auto_get_data.py" />
+        <option value="$PROJECT_DIR$/job/get_data.py" />
       </list>
     </option>
   </component>
@@ -333,13 +331,13 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24984106" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24984106" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.3106796" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.3106796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -682,23 +680,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/job/auto_get_data.spec">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/job/merge_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="-152">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job/auto_get_data.spec">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/job/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="187" column="26" selection-start-line="187" selection-start-column="26" selection-end-line="187" selection-end-column="26" />
+        <state relative-caret-position="402">
+          <caret line="205" column="23" selection-start-line="205" selection-start-column="23" selection-end-line="205" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#201#749#0" />
@@ -708,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="215">
+          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
