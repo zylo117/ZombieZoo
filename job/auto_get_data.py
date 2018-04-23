@@ -28,7 +28,11 @@ today_date = "/".join(str(today_date.date()).split("-"))
 yesterday_date = "/".join(str(yesterday_date).split("-"))
 
 get_data.get_gfc_lot_data("GFCUP", "GFC-UP", yesterday_date + "/07/00/00", today_date + "/07/00/00",
-                          tmp_sava_path + "gfc.csv",
+                          tmp_sava_path + "gfc_up.csv",
+                          interval=0.5)
+
+get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", yesterday_date + "/07/00/00", today_date + "/07/00/00",
+                          tmp_sava_path + "gfc_down.csv",
                           interval=0.5)
 
 lens_code = ["G-818-02093-GENIUS", "G-818-02093-LARGAN", "G-818-02093-OLM", "G-818-02093-KANTATSU"]
@@ -49,10 +53,15 @@ get_data.get_material_data(ircf_code, yesterday_date + "/07/00/00", today_date +
 if not os.path.exists(args["out"] + args["category"]):
     os.mkdir(args["out"] + args["category"])
 
-if not os.path.exists(args["out"] + "/global_gfc.csv"):
-    shutil.move(tmp_sava_path + "gfc.csv", args["out"] + "/global_gfc.csv")
+if not os.path.exists(args["out"] + "/global_gfc_up.csv"):
+    shutil.move(tmp_sava_path + "gfc_up.csv", args["out"] + "/global_gfc_up.csv")
 else:
-    merge_data.append_data(args["out"] + "/global_gfc.csv", tmp_sava_path + "gfc.csv")
+    merge_data.append_data(args["out"] + "/global_gfc_up.csv", tmp_sava_path + "gfc_up.csv")
+
+if not os.path.exists(args["out"] + "/global_gfc_down.csv"):
+    shutil.move(tmp_sava_path + "gfc_down.csv", args["out"] + "/global_gfc_down.csv")
+else:
+    merge_data.append_data(args["out"] + "/global_gfc_down.csv", tmp_sava_path + "gfc_down.csv")
 
 if not os.path.exists(args["out"] + args["category"] + "/lens.csv"):
     shutil.move(tmp_sava_path + "lens.csv", args["out"] + args["category"] + "/lens.csv")

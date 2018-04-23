@@ -61,7 +61,7 @@ def login(user_name, password):
 def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval=1.0):
     # select Find
     pyautogui.click(430, 40)
-    time.sleep(interval)
+    time.sleep(interval * 4)
     # select process output
     for i in range(4):
         pyautogui.press("down")
@@ -155,13 +155,17 @@ def save_data(interval, save_path):
     pyautogui.press("enter")
     time.sleep(interval)
     pyautogui.typewrite("y")
+    time.sleep(interval * 4)
+    pyautogui.press("enter")
+    time.sleep(interval * 4)
+    exit(interval)
+
+
+def exit(interval):
+    pyautogui.press("esc")
     time.sleep(interval * 2)
     pyautogui.press("enter")
-    time.sleep(interval)
-    pyautogui.press("esc")
-    time.sleep(interval)
-    pyautogui.press("enter")
-    time.sleep(interval)
+    time.sleep(interval * 2)
 
 
 def search():
@@ -181,7 +185,7 @@ def search():
 def get_material_data(material_code, from_time, to_time, save_path, interval=1.0):
     # select Find
     pyautogui.click(430, 40)
-    time.sleep(interval)
+    time.sleep(interval * 2)
     # select material output
     for i in range(12):
         pyautogui.press("down")
@@ -253,7 +257,8 @@ if __name__ == "__main__":
 
     sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
 
-    get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/23/01/01/01", sava_path + "gfc.csv", interval=0.5)
+    get_gfc_lot_data("GFCUP", "GFC-UP", "2018/04/19/01/01/01", "2018/04/23/01/01/01", sava_path + "gfc.csv",
+                     interval=0.5)
 
     lens_code = ["G-818-02093-GENIUS", "G-818-02093-LARGAN", "G-818-02093-OLM", "G-818-02093-KANTATSU"]
     get_material_data(lens_code, "2018/04/17/01/01/00", "2018/04/19/01/01/00", sava_path + "lens.csv", interval=0.5)
