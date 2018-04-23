@@ -22,30 +22,35 @@ get_data.login(args["usr"], args["pwd"])
 
 # get data and store in into temp dir
 tmp_sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
-today_date = datetime.datetime.now()
-yesterday_date = (today_date - datetime.timedelta(days=1)).date()
-today_date = "/".join(str(today_date.date()).split("-"))
-yesterday_date = "/".join(str(yesterday_date).split("-"))
 
-get_data.get_gfc_lot_data("GFCUP", "GFC-UP", yesterday_date + "/07/00/00", today_date + "/07/00/00",
+if args["timerange"] is None:
+    new_date = datetime.datetime.now()
+    old_date = (new_date - datetime.timedelta(days=1)).date()
+    new_date = "/".join(str(new_date.date()).split("-")) + "/07/00/00"
+    old_date = "/".join(str(old_date).split("-")) + "/07/00/00"
+else:
+    old_date, new_date = args["timerange"].split("-")
+    
+
+get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date,
                           tmp_sava_path + "gfc_up.csv",
                           interval=0.5)
 
-get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", yesterday_date + "/07/00/00", today_date + "/07/00/00",
+get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date,
                           tmp_sava_path + "gfc_down.csv",
                           interval=0.5)
 
 lens_code = ["G-818-02093-GENIUS", "G-818-02093-LARGAN", "G-818-02093-OLM", "G-818-02093-KANTATSU"]
-get_data.get_material_data(lens_code, yesterday_date + "/07/00/00", today_date + "/07/00/00",
+get_data.get_material_data(lens_code, old_date, new_date,
                            tmp_sava_path + "lens.csv",
                            interval=0.5)
 
 aa_code = ["AACV125             1A", "AACV126             1A", "AACV127             1A", "AACV128             1A"]
-get_data.get_material_data(aa_code, yesterday_date + "/07/00/00", today_date + "/07/00/00", tmp_sava_path + "aa.csv",
+get_data.get_material_data(aa_code, old_date, new_date, tmp_sava_path + "aa.csv",
                            interval=0.5)
 
 ircf_code = ["G-816-00424-AGC", "G-816-00424-PTOT"]
-get_data.get_material_data(ircf_code, yesterday_date + "/07/00/00", today_date + "/07/00/00",
+get_data.get_material_data(ircf_code, old_date, new_date,
                            tmp_sava_path + "ircf.csv",
                            interval=0.5)
 
