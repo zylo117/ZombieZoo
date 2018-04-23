@@ -22,27 +22,34 @@ def append_data(old_csv_path, new_csv_path, encoding="gbk"):
     new_csv.to_csv(old_csv_path, header=False, index=False, mode="a", encoding=encoding)
 
 
+def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path):
+    ircf_data = pd.read_csv(ircf_csv_path)
+    aa_data = pd.read_csv(aa_csv_path)
+    lens_data = pd.read_csv(lens_csv_path)
+    gfc_up_data = pd.read_csv(gfc_up_csv_path)
+    gfc_down_data = pd.read_csv(gfc_down_csv_path)
+
+    ircf_aa = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
+    ircf_aa_lens = pd.merge(ircf_aa, lens_data, how="left", left_on="材料批号_y", right_on="在制品代码")
+    ircf_aa_lens_gfc_up = pd.merge(ircf_aa_lens, gfc_up_data, how="left", left_on="在制品代码_x", right_on="在制品代码")
+    ircf_aa_lens_gfc_all = pd.merge(ircf_aa_lens_gfc_up, gfc_down_data, how="left", left_on="在制品代码_x",
+                                    right_on="在制品代码").fillna(0)
+    return ircf_aa_lens_gfc_all
+
+
 if __name__ == "__main__":
     data_path = "c:\\temp\\"
 
-    gfc_csv_path = data_path + "gfc.csv"
-    gfc_data = pd.read_csv(gfc_csv_path)
-
+    gfc_up_csv_path = data_path + "gfc_up.csv"
+    gfc_down_csv_path = data_path + "gfc_down.csv"
     lens_csv_path = data_path + "lens.csv"
-    len_data = pd.read_csv(lens_csv_path)
-
     aa_csv_path = data_path + "aa.csv"
-    aa_data = pd.read_csv(aa_csv_path)
-
     ircf_csv_path = data_path + "ircf.csv"
-    ircf_data = pd.read_csv(ircf_csv_path)
 
-    ircf_aa = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
-    ircf_aa_lens = pd.merge(ircf_aa, len_data, how="left", left_on="材料批号_y", right_on="在制品代码")
-    ircf_aa_lens_gfc = pd.merge(ircf_aa_lens, gfc_data, how="left", left_on="在制品代码_x", right_on="在制品代码").fillna(0)
+    ircf_aa_lens_gfc_all = generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path)
 
-    ircf_aa_lens_gfc.to_csv(data_path + "out.csv", encoding="gbk")
+    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="gbk")
 
-    ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
+    # ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
 
     print(0)

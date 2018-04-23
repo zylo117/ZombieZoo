@@ -49,6 +49,16 @@ get_data.get_material_data(ircf_code, yesterday_date + "/07/00/00", today_date +
                            tmp_sava_path + "ircf.csv",
                            interval=0.5)
 
+# generate the merged data
+gfc_up_csv_path = tmp_sava_path + "gfc_up.csv"
+gfc_down_csv_path = tmp_sava_path + "gfc_down.csv"
+lens_csv_path = tmp_sava_path + "lens.csv"
+aa_csv_path = tmp_sava_path + "aa.csv"
+ircf_csv_path = tmp_sava_path + "ircf.csv"
+
+ircf_aa_lens_gfc_all = merge_data.generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path)
+ircf_aa_lens_gfc_all.to_csv(tmp_sava_path + "lcb_data.csv", encoding="gbk")
+
 # move or merge the new data
 if not os.path.exists(args["out"] + args["category"]):
     os.mkdir(args["out"] + args["category"])
@@ -77,3 +87,9 @@ if not os.path.exists(args["out"] + args["category"] + "/ircf.csv"):
     shutil.move(tmp_sava_path + "ircf.csv", args["out"] + args["category"] + "/ircf.csv")
 else:
     merge_data.append_data(args["out"] + args["category"] + "/ircf.csv", tmp_sava_path + "ircf.csv")
+
+# output merged data
+if not os.path.exists(args["out"] + args["category"] + "/lcb_data.csv"):
+    shutil.move(tmp_sava_path + "lcb_data.csv", args["out"] + args["category"] + "/lcb_data.csv")
+else:
+    merge_data.append_data(args["out"] + args["category"] + "/lcb_data.csv", tmp_sava_path + "lcb_data.csv")
