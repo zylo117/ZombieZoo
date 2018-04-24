@@ -68,9 +68,50 @@ def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path):
     # rename header
     material_data = header_rename(material_data, rename_dict)
 
+    # extract the wanted col
     material_data = material_data[wanted_col]
 
+    material_data = mutate_data(material_data)
+
     return material_data
+
+
+def mutate_data(material_data):
+    # move lot to the front
+    lot = material_data.pop("Lot")
+    material_data.insert(0, "Lot", lot)
+
+    # simplify IRCF vendor
+    material_data["IRCF Vendor"] = material_data["IRCF Vendor"].apply(lambda x: str(x).split("-")[-1])
+    material_data = insert_col(material_data, "IRCF Parent Lot", after_col_name="IRCF Lot")
+    material_data["IRCF Parent Lot"] = material_data["IRCF Lot"].apply(lambda x: str(x)[:11])
+
+    # get IRCF details
+    material_data["IRCF Polishing Site"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[0])
+    material_data["IRCF Coating Site"] = np.nan
+    material_data["IRCF Coating Site"][material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1])
+    material_data["IRCF Coating Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1:3])
+    material_data["IRCF Coating Site IR"] = np.nan
+    material_data["IRCF Coating Site AR"] = np.nan
+    material_data["IRCF Coating Site IR"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1])
+    material_data["IRCF Coating Site AR"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[2])
+
+    material_data["IRCF BlackMask Site"] = np.nan
+    material_data["IRCF BlackMask Site"][material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[2])
+    material_data["IRCF BlackMask Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[3])
+
+    material_data["IRCF Dicing Site"] = np.nan
+    material_data["IRCF Dicing Site"][material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[3])
+    material_data["IRCF Dicing Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[4])
+
+    return material_data
+
+
+def insert_col(pandas_dataframe, new_col_name, before_col_name=None, after_col_name=None):
+    col_name = pandas_dataframe.columns.tolist()
+    col_name.insert(col_name.index(before_col_name), new_col_name) if after_col_name is None else col_name.insert(
+        col_name.index(after_col_name) + 1, new_col_name)
+    return pandas_dataframe.reindex(columns=col_name)
 
 
 def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, index_end=0):
