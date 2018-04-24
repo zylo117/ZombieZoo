@@ -2,6 +2,30 @@ import pandas as pd
 import numpy as np
 import csv
 
+rename_dict = {"材料代码_x": "IRCF Vendor",
+               "材料批号_x": "IRCF Lot",
+               "在制品代码_x": "Lot",
+               "交易时间_x": "FC Process Date",
+               "机台代码_x": "FC Mac No",
+               "交易时间_y": "AA Process Date",
+               "机台代码_y": "AA Mac No",
+               "材料代码": "Lens Vendor",
+               "材料批号": "Lens Lot",
+               "交易时间": "Lens Plasma Process Date",
+               "机台代码": "Lens Plasma Mac No"}
+
+wanted_col = ["IRCF Vendor",
+              "IRCF Lot",
+              "Lot",
+              "FC Process Date",
+              "FC Mac No",
+              "AA Process Date",
+              "AA Mac No",
+              "Lens Vendor",
+              "Lens Lot",
+              "Lens Plasma Process Date",
+              "Lens Plasma Mac No"]
+
 
 def read_csv_purepython(csv_path):
     f = open(csv_path, 'r', encoding="utf-8")
@@ -17,12 +41,12 @@ def read_csv_purepython(csv_path):
     return header, data
 
 
-def append_data(old_csv_path, new_csv_path, encoding="gbk"):
-    new_csv = pd.read_csv(new_csv_path)
+def append_data(old_csv_path, new_csv_path, encoding="utf-8"):
+    new_csv = pd.read_csv(new_csv_path, encoding=encoding)
     new_csv.to_csv(old_csv_path, header=False, index=False, mode="a", encoding=encoding)
 
 
-def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path):
+def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path):
     ircf_data = pd.read_csv(ircf_csv_path)
     # remove the irrelevance
     ircf_data = keyword_filter(ircf_data, "机台代码", "FC", 1, 3)
@@ -31,28 +55,22 @@ def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path
     ircf_data = ircf_data.drop_duplicates("在制品代码", keep="first")
     ircf_data = ircf_data.sort_values("序号", ascending=True)
 
-
     aa_data = pd.read_csv(aa_csv_path)
     aa_data = aa_data.sort_values("使用量", ascending=False)
     aa_data = aa_data.drop_duplicates("在制品代码", keep="first")
     aa_data = aa_data.sort_values("序号", ascending=True)
 
     lens_data = pd.read_csv(lens_csv_path)
-    gfc_up_data = pd.read_csv(gfc_up_csv_path)
-    gfc_down_data = pd.read_csv(gfc_down_csv_path)
 
-    ircf_aa = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
-    ircf_aa_lens = pd.merge(ircf_aa, lens_data, how="left", left_on="材料批号_y", right_on="在制品代码")
-    # ircf_aa_lens_gfc_up = pd.merge(ircf_aa_lens, gfc_up_data, how="left", left_on="在制品代码_x", right_on="在制品代码")
-    # ircf_aa_lens_gfc_all = pd.merge(ircf_aa_lens_gfc_up, gfc_down_data, how="left", left_on="在制品代码_x",
-    #                                 right_on="在制品代码").fillna(0)
+    material_data = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
+    material_data = pd.merge(material_data, lens_data, how="left", left_on="材料批号_y", right_on="在制品代码")
 
     # rename header
-    #header_rename(ircf_aa_lens_gfc_all)
+    material_data = header_rename(material_data, rename_dict)
 
-    output = ircf_aa_lens
+    material_data = material_data[wanted_col]
 
-    return output
+    return material_data
 
 
 def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, index_end=0):
@@ -64,12 +82,9 @@ def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, ind
 
     return pandas_dataframe.loc[keyword_boolmap]
 
-name_dict={"材料代码_x":"IRCF Vendor", "材料批号_x":"IRCF Lot",}
 
 def header_rename(pandas_dataframe, name_dict):
-    print(0)
-    # pandas_dataframe.
-    # for name_dict[name] in name_dict:
+    return pandas_dataframe.rename(name_dict, axis="columns")
 
 
 if __name__ == "__main__":
@@ -81,8 +96,7 @@ if __name__ == "__main__":
     aa_csv_path = data_path + "aa.csv"
     ircf_csv_path = data_path + "ircf.csv"
 
-    ircf_aa_lens_gfc_all = generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path,
-                                             gfc_down_csv_path)
+    ircf_aa_lens_gfc_all = generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path)
 
     ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="gbk", index=False)
 
