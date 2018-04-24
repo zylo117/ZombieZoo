@@ -24,22 +24,35 @@ def append_data(old_csv_path, new_csv_path, encoding="gbk"):
 
 def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path):
     ircf_data = pd.read_csv(ircf_csv_path)
+    # remove the irrelevance
     ircf_data = keyword_filter(ircf_data, "机台代码", "FC", 1, 3)
+    # keep only the material that had been used more
+    ircf_data = ircf_data.sort_values("使用量", ascending=False)
+    ircf_data = ircf_data.drop_duplicates("在制品代码", keep="first")
+    ircf_data = ircf_data.sort_values("序号", ascending=True)
+
 
     aa_data = pd.read_csv(aa_csv_path)
+    aa_data = aa_data.sort_values("使用量", ascending=False)
+    aa_data = aa_data.drop_duplicates("在制品代码", keep="first")
+    aa_data = aa_data.sort_values("序号", ascending=True)
+
     lens_data = pd.read_csv(lens_csv_path)
     gfc_up_data = pd.read_csv(gfc_up_csv_path)
     gfc_down_data = pd.read_csv(gfc_down_csv_path)
 
     ircf_aa = pd.merge(ircf_data, aa_data, how="left", on="在制品代码")
     ircf_aa_lens = pd.merge(ircf_aa, lens_data, how="left", left_on="材料批号_y", right_on="在制品代码")
-    ircf_aa_lens_gfc_up = pd.merge(ircf_aa_lens, gfc_up_data, how="left", left_on="在制品代码_x", right_on="在制品代码")
-    ircf_aa_lens_gfc_all = pd.merge(ircf_aa_lens_gfc_up, gfc_down_data, how="left", left_on="在制品代码_x",
-                                    right_on="在制品代码").fillna(0)
+    # ircf_aa_lens_gfc_up = pd.merge(ircf_aa_lens, gfc_up_data, how="left", left_on="在制品代码_x", right_on="在制品代码")
+    # ircf_aa_lens_gfc_all = pd.merge(ircf_aa_lens_gfc_up, gfc_down_data, how="left", left_on="在制品代码_x",
+    #                                 right_on="在制品代码").fillna(0)
 
     # rename header
-    header_rename(ircf_aa_lens_gfc_all)
-    return ircf_aa_lens_gfc_all
+    #header_rename(ircf_aa_lens_gfc_all)
+
+    output = ircf_aa_lens
+
+    return output
 
 
 def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, index_end=0):
@@ -51,6 +64,7 @@ def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, ind
 
     return pandas_dataframe.loc[keyword_boolmap]
 
+name_dict={"材料代码_x":"IRCF Vendor", "材料批号_x":"IRCF Lot",}
 
 def header_rename(pandas_dataframe, name_dict):
     print(0)
@@ -70,7 +84,7 @@ if __name__ == "__main__":
     ircf_aa_lens_gfc_all = generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path,
                                              gfc_down_csv_path)
 
-    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="gbk")
+    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="gbk", index=False)
 
     # ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
 
