@@ -24,7 +24,7 @@ def append_data(old_csv_path, new_csv_path, encoding="gbk"):
 
 def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path):
     ircf_data = pd.read_csv(ircf_csv_path)
-    ircf_data = filter(ircf_data, "机台代码", )
+    ircf_data = keyword_filter(ircf_data, "机台代码", "FC", 1, 3)
 
     aa_data = pd.read_csv(aa_csv_path)
     lens_data = pd.read_csv(lens_csv_path)
@@ -42,8 +42,14 @@ def generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path
     return ircf_aa_lens_gfc_all
 
 
-def filter(pandas_dataframe, col_name, match_content):
-    return pandas_dataframe.loc[pandas_dataframe[col_name] == match_content]
+def keyword_filter(pandas_dataframe, col_name, match_content, index_start=0, index_end=0):
+    if index_start != 0 and index_end != 0:
+        keyword_boolmap = pandas_dataframe[col_name].apply(
+            lambda x: True if str(x)[index_start:index_end] == match_content else False)
+    else:
+        keyword_boolmap = pandas_dataframe[col_name].apply(lambda x: True if str(x) == match_content else False)
+
+    return pandas_dataframe.loc[keyword_boolmap]
 
 
 def header_rename(pandas_dataframe, name_dict):
