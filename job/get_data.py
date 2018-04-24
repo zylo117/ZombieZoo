@@ -58,7 +58,7 @@ def login(user_name, password):
             break
 
 
-def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval=1.0):
+def get_gfc_lot_data(process, procedure, from_time, to_time, category, save_path, interval=1.0):
     # select Find
     pyautogui.click(430, 40)
     time.sleep(interval)
@@ -132,6 +132,13 @@ def get_gfc_lot_data(process, procedure, from_time, to_time, save_path, interval
     time.sleep(interval)
     pyautogui.click(872, 108)
     pyautogui.typewrite(to_time[5])
+    time.sleep(interval)
+
+    # enter category
+    pyautogui.click(418, 136)
+    pyautogui.click(620, 136)
+    pyautogui.typewrite(category)
+    pyautogui.press("enter")
     time.sleep(interval)
 
     # start searching

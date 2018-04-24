@@ -30,13 +30,14 @@ if args["timerange"] is None:
     old_date = "/".join(str(old_date).split("-")) + "/07/00/00"
 else:
     old_date, new_date = args["timerange"].split("-")
-    
 
-get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date,
+category = args["category"]  # could be "BlueBerry", "Angel", "MerMaid", "Lumber", "Syrup", "Cotton"
+
+get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date, category,
                           tmp_sava_path + "gfc_up.csv",
                           interval=0.5)
 
-get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date,
+get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date, category,
                           tmp_sava_path + "gfc_down.csv",
                           interval=0.5)
 
@@ -61,40 +62,43 @@ lens_csv_path = tmp_sava_path + "lens.csv"
 aa_csv_path = tmp_sava_path + "aa.csv"
 ircf_csv_path = tmp_sava_path + "ircf.csv"
 
-ircf_aa_lens_gfc_all = merge_data.generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path, gfc_down_csv_path)
+ircf_aa_lens_gfc_all = merge_data.generate_lcb_data(ircf_csv_path, aa_csv_path, lens_csv_path, gfc_up_csv_path,
+                                                    gfc_down_csv_path)
 ircf_aa_lens_gfc_all.to_csv(tmp_sava_path + "lcb_data.csv", encoding="gbk")
 
 # move or merge the new data
-if not os.path.exists(args["out"] + args["category"]):
-    os.mkdir(args["out"] + args["category"])
+target_path = args["out"] + args["category"] + "/"
 
-if not os.path.exists(args["out"] + "/global_gfc_up.csv"):
-    shutil.move(tmp_sava_path + "gfc_up.csv", args["out"] + "/global_gfc_up.csv")
-else:
-    merge_data.append_data(args["out"] + "/global_gfc_up.csv", tmp_sava_path + "gfc_up.csv")
+if not os.path.exists(target_path):
+    os.mkdir(target_path)
 
-if not os.path.exists(args["out"] + "/global_gfc_down.csv"):
-    shutil.move(tmp_sava_path + "gfc_down.csv", args["out"] + "/global_gfc_down.csv")
+if not os.path.exists(target_path + "gfc_up.csv"):
+    shutil.move(tmp_sava_path + "gfc_up.csv", target_path + "gfc_up.csv")
 else:
-    merge_data.append_data(args["out"] + "/global_gfc_down.csv", tmp_sava_path + "gfc_down.csv")
+    merge_data.append_data(target_path + "gfc_up.csv", tmp_sava_path + "gfc_up.csv")
 
-if not os.path.exists(args["out"] + args["category"] + "/lens.csv"):
-    shutil.move(tmp_sava_path + "lens.csv", args["out"] + args["category"] + "/lens.csv")
+if not os.path.exists(target_path + "gfc_down.csv"):
+    shutil.move(tmp_sava_path + "gfc_down.csv", target_path + "gfc_down.csv")
 else:
-    merge_data.append_data(args["out"] + args["category"] + "/lens.csv", tmp_sava_path + "lens.csv")
+    merge_data.append_data(target_path + "gfc_down.csv", tmp_sava_path + "gfc_down.csv")
 
-if not os.path.exists(args["out"] + args["category"] + "/aa.csv"):
-    shutil.move(tmp_sava_path + "aa.csv", args["out"] + args["category"] + "/aa.csv")
+if not os.path.exists(target_path + "lens.csv"):
+    shutil.move(tmp_sava_path + "lens.csv", target_path + "lens.csv")
 else:
-    merge_data.append_data(args["out"] + args["category"] + "/aa.csv", tmp_sava_path + "aa.csv")
+    merge_data.append_data(target_path + "lens.csv", tmp_sava_path + "lens.csv")
 
-if not os.path.exists(args["out"] + args["category"] + "/ircf.csv"):
-    shutil.move(tmp_sava_path + "ircf.csv", args["out"] + args["category"] + "/ircf.csv")
+if not os.path.exists(target_path + "aa.csv"):
+    shutil.move(tmp_sava_path + "aa.csv", target_path + "aa.csv")
 else:
-    merge_data.append_data(args["out"] + args["category"] + "/ircf.csv", tmp_sava_path + "ircf.csv")
+    merge_data.append_data(target_path + "aa.csv", tmp_sava_path + "aa.csv")
+
+if not os.path.exists(target_path + "ircf.csv"):
+    shutil.move(tmp_sava_path + "ircf.csv", target_path + "ircf.csv")
+else:
+    merge_data.append_data(target_path + "ircf.csv", tmp_sava_path + "ircf.csv")
 
 # output merged data
-if not os.path.exists(args["out"] + args["category"] + "/lcb_data.csv"):
-    shutil.move(tmp_sava_path + "lcb_data.csv", args["out"] + args["category"] + "/lcb_data.csv")
+if not os.path.exists(target_path + "lcb_data.csv"):
+    shutil.move(tmp_sava_path + "lcb_data.csv", target_path + "lcb_data.csv")
 else:
-    merge_data.append_data(args["out"] + args["category"] + "/lcb_data.csv", tmp_sava_path + "lcb_data.csv")
+    merge_data.append_data(target_path + "lcb_data.csv", tmp_sava_path + "lcb_data.csv")
