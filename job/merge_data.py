@@ -119,6 +119,8 @@ def _judge_category(x):
             return "BlueBerry"
         elif sub_category == "2":
             return "Granite-E"
+    elif sensor_model == "414":
+        return "Angel"
     elif sensor_model == "247":
         return "Lumber"
     elif sensor_model == "190":

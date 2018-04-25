@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/auto_get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/auto_get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/merge_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/merge_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+            <state relative-caret-position="205">
+              <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#2972#5527#0" />
@@ -201,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.merge_data">
+  <component name="RunManager" selected="Python.joblist (1)">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -413,7 +411,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>189</line>
+          <line>191</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -790,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/job/merge_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+        <state relative-caret-position="205">
+          <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#2972#5527#0" />
