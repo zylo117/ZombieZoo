@@ -252,7 +252,7 @@ def get_material_data(material_code, from_time, to_time, save_path, interval=1.0
     pyautogui.typewrite(to_time[4])
     time.sleep(interval)
 
-    # select material code
+    # enter material code
     pyautogui.click(26, 148)
     time.sleep(interval)
     pyautogui.click(190, 150)
@@ -262,6 +262,10 @@ def get_material_data(material_code, from_time, to_time, save_path, interval=1.0
     pyautogui.typewrite(code_set)
     time.sleep(interval)
     pyautogui.press("enter")
+    time.sleep(interval)
+
+    # click "output the maximum items"
+    pyautogui.click(498, 186)
     time.sleep(interval)
 
     # start searching

@@ -54,15 +54,15 @@ def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, encoding="
     ircf_data = pd.read_csv(ircf_csv_path, encoding=encoding)
     # remove the irrelevance
     ircf_data = keyword_filter(ircf_data, "机台代码", "FC", 1, 3)
-    # keep only the material that had been used more
-    ircf_data = ircf_data.sort_values("使用量", ascending=False)
-    ircf_data = ircf_data.drop_duplicates("在制品代码", keep="first")
-    ircf_data = ircf_data.sort_values("序号", ascending=True)
+    # keep only the material that had been used more, never mind, done by data input(MES system)
+    # ircf_data = ircf_data.sort_values("使用量", ascending=False)
+    # ircf_data = ircf_data.drop_duplicates("在制品代码", keep="first")
+    # ircf_data = ircf_data.sort_values("序号", ascending=True)
 
     aa_data = pd.read_csv(aa_csv_path, encoding=encoding)
-    aa_data = aa_data.sort_values("使用量", ascending=False)
-    aa_data = aa_data.drop_duplicates("在制品代码", keep="first")
-    aa_data = aa_data.sort_values("序号", ascending=True)
+    # aa_data = aa_data.sort_values("使用量", ascending=False)
+    # aa_data = aa_data.drop_duplicates("在制品代码", keep="first")
+    # aa_data = aa_data.sort_values("序号", ascending=True)
 
     lens_data = pd.read_csv(lens_csv_path, encoding=encoding)
 
