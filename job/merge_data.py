@@ -7,6 +7,7 @@ rename_dict = {"材料代码_x": "IRCF Vendor",
                "在制品代码_x": "Lot",
                "交易时间_x": "FC Process Date",
                "机台代码_x": "FC Mac No",
+               "制品名_x": "Product Name",
                "交易时间_y": "AA Process Date",
                "机台代码_y": "AA Mac No",
                "材料代码": "Lens Vendor",
@@ -14,17 +15,18 @@ rename_dict = {"材料代码_x": "IRCF Vendor",
                "交易时间": "Lens Plasma Process Date",
                "机台代码": "Lens Plasma Mac No"}
 
-wanted_col = ["IRCF Vendor",
-              "IRCF Lot",
-              "Lot",
+wanted_col = ["Lot",
+              "Product Name",
               "FC Process Date",
               "FC Mac No",
+              "IRCF Vendor",
+              "IRCF Lot",
+              "Lens Plasma Process Date",
+              "Lens Plasma Mac No",
               "AA Process Date",
               "AA Mac No",
               "Lens Vendor",
-              "Lens Lot",
-              "Lens Plasma Process Date",
-              "Lens Plasma Mac No"]
+              "Lens Lot"]
 
 
 def read_csv_purepython(csv_path):
@@ -77,21 +79,76 @@ def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, encoding="
 
 
 def mutate_data(material_data):
-    # move lot to the front
-    lot = material_data.pop("Lot")
-    material_data.insert(0, "Lot", lot)
+    # move lot to the front, use wanted_col list instead
+    # lot = material_data.pop("Lot")
+    # material_data.insert(0, "Lot", lot)
+
+    # add category
+    material_data = insert_col(material_data, "Category", after_col_name="Lot")
+    material_data["Category"] = material_data["Product Name"].apply(lambda x: _judge_category(x))
 
     # parse_IRCF_details
     material_data = _parse_IRCF_details(material_data)
 
     # parse_Lens_details
+    material_data = _parse_lens_details(material_data)
+
+    return material_data
+
+# LBTTXB2844B01X
+# LB0A0A6845E58T
+
+
+def _judge_category(x):
+    category = None
+    # pre-process
+    category_header, category_footer = x.split("-")
+    category_footer = category_footer.split("_")[0]
+
+    sensor_model = category_header[:-1].strip("IU")
+    sub_category = category_header.strip("IU"+sensor_model).split("N")[-1]
+    sub_config = category_footer.split("Q")[-1]
+
+    if sensor_model == "314":
+        if sub_config == "":
+            return "Granite-D"
+        elif sub_config == "2":
+            return "Granite-C"
+    elif sensor_model == "354":
+        if sub_category == "":
+            return "BlueBerry"
+        elif sub_category == "2":
+            return "Granite-E"
+    elif sensor_model == "247":
+        return "Lumber"
+    elif sensor_model == "190":
+        if sub_config == "2":
+            return "Syrup-A"
+        elif sub_config == "3":
+            return "Syrup-S"
+
+def _parse_lens_details(material_data):
     # simplify Lens vendor
     material_data["Lens Vendor"] = material_data["Lens Vendor"].apply(lambda x: str(x).split("-")[-1])
-
+    material_data = insert_col(material_data, "Lens Parent Lot", after_col_name="Lens Lot")
+    material_data["Lens Parent Lot"] = material_data["Lens Lot"].apply(lambda x: str(x)[:11])
+    # get Lens cav, tool, etc.
+    material_data["Lens Factory"] = material_data["Lens Parent Lot"].apply(
+        lambda x: str(x)[0] if x != "nan" else np.nan)
+    material_data["Lens Project"] = material_data["Lens Parent Lot"].apply(
+        lambda x: str(x)[1] if x != "nan" else np.nan)
+    material_data["Lens Tool"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[2:4] if x != "nan" else np.nan)
+    material_data["Lens Cavity"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[4] if x != "nan" else np.nan)
+    material_data["Lens Revision"] = material_data["Lens Parent Lot"].apply(
+        lambda x: str(x)[5:7] if x != "nan" else np.nan)
+    material_data["Lens Date"] = material_data["Lens Parent Lot"].apply(
+        lambda x: str(int(x[7], 36) + 2010) + "/" + str(int(x[8], 36)) + "/" + str(
+            int(x[9], 36)) if x != "nan" else np.nan)
     return material_data
 
 
 def _parse_IRCF_details(material_data):
+    pd.options.mode.chained_assignment = None  # default='warn' disable: SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame
     # simplify IRCF vendor
     material_data["IRCF Vendor"] = material_data["IRCF Vendor"].apply(lambda x: str(x).split("-")[-1])
     material_data = insert_col(material_data, "IRCF Parent Lot", after_col_name="IRCF Lot")
@@ -99,34 +156,22 @@ def _parse_IRCF_details(material_data):
     # get IRCF details
     material_data["IRCF Polishing Site"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[0])
     material_data["IRCF Coating Site"] = np.nan
-    material_data["IRCF Coating Site"][material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(
-        lambda x: str(x)[1])
-    material_data["IRCF Coating Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(
-        lambda x: str(x)[1:3])
+    material_data["IRCF Coating Site"].loc[material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1])
+    material_data["IRCF Coating Site"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1:3])
     material_data["IRCF Coating Site IR"] = np.nan
     material_data["IRCF Coating Site AR"] = np.nan
-    material_data["IRCF Coating Site IR"][material_data["IRCF Vendor"] == "PTOT"] = material_data[
-        "IRCF Parent Lot"].apply(lambda x: str(x)[1])
-    material_data["IRCF Coating Site AR"][material_data["IRCF Vendor"] == "PTOT"] = material_data[
-        "IRCF Parent Lot"].apply(lambda x: str(x)[2])
+    material_data["IRCF Coating Site IR"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[1])
+    material_data["IRCF Coating Site AR"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[2])
     material_data["IRCF BlackMask Site"] = np.nan
-    material_data["IRCF BlackMask Site"][material_data["IRCF Vendor"] == "AGC"] = material_data[
-        "IRCF Parent Lot"].apply(lambda x: str(x)[2])
-    material_data["IRCF BlackMask Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data[
-        "IRCF Parent Lot"].apply(lambda x: str(x)[3])
+    material_data["IRCF BlackMask Site"].loc[material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[2])
+    material_data["IRCF BlackMask Site"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[3])
     material_data["IRCF Dicing Site"] = np.nan
-    material_data["IRCF Dicing Site"][material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(
-        lambda x: str(x)[3])
-    material_data["IRCF Dicing Site"][material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(
-        lambda x: str(x)[4])
+    material_data["IRCF Dicing Site"].loc[material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[3])
+    material_data["IRCF Dicing Site"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(x)[4])
     # get IRCF date
     material_data["IRCF Production Date"] = np.nan
-    material_data["IRCF Production Date"][material_data["IRCF Vendor"] == "AGC"] = material_data[
-        "IRCF Parent Lot"].apply(
-        lambda x: str(int(str(x)[4], 36) + 2010) + "/" + str(int(str(x)[5], 36)) + "/" + str(x)[6:8])
-    material_data["IRCF Production Date"][material_data["IRCF Vendor"] == "PTOT"] = material_data[
-        "IRCF Parent Lot"].apply(
-        lambda x: str(int(str(x)[5], 36) + 2010) + "/" + str(int(str(x)[6], 36)) + "/" + str(int(str(x)[7], 36)))
+    material_data["IRCF Production Date"].loc[material_data["IRCF Vendor"] == "AGC"] = material_data["IRCF Parent Lot"].apply(lambda x: str(int(str(x)[4], 36) + 2010) + "/" + str(int(str(x)[5], 36)) + "/" + str(x)[6:8])
+    material_data["IRCF Production Date"].loc[material_data["IRCF Vendor"] == "PTOT"] = material_data["IRCF Parent Lot"].apply(lambda x: str(int(str(x)[5], 36) + 2010) + "/" + str(int(str(x)[6], 36)) + "/" + str(int(str(x)[7], 36)))
     return material_data
 
 
@@ -162,7 +207,7 @@ if __name__ == "__main__":
 
     ircf_aa_lens_gfc_all = generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, "utf-8")
 
-    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="gbk", index=False)
+    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="utf-8", index=False)
 
     # ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
 

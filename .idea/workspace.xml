@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/auto_get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/auto_get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/merge_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/merge_data.py" afterDir="false" />
     </list>
@@ -20,66 +21,54 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="174">
+              <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#2847#5315#0" />
+                <element signature="e#2972#5527#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files (x86)/Python36-32/Lib/codecs.py">
+      <file leaf-file-name="series.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13963">
-              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="18">
+              <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parsers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/parsers.py">
+      <file leaf-file-name="indexing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-353">
-              <caret line="552" column="4" selection-start-line="552" selection-start-column="4" selection-end-line="552" selection-end-column="4" />
+            <state relative-caret-position="117">
+              <caret line="1268" selection-start-line="1268" selection-end-line="1268" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/836067799/builtins.py">
+      <file leaf-file-name="auto_get_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="1126" column="8" selection-start-line="1126" selection-start-column="8" selection-end-line="1126" selection-end-column="8" />
+            <state relative-caret-position="157">
+              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generic.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/generic.py">
+      <file leaf-file-name="window_operation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-251">
-              <caret line="6116" selection-start-line="6116" selection-end-line="6116" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="476" selection-start-line="476" selection-end-line="476" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="721" selection-start-line="721" selection-end-line="721" />
+            <state relative-caret-position="101">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#47#62#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,6 +102,8 @@
       <find>&quot;lcb_data</find>
       <find>mkdir</find>
       <find>read_csv</find>
+      <find>][</find>
+      <find>!= np.nan</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
@@ -125,6 +116,7 @@
       <replace>material_data</replace>
       <replace>&quot;material_data</replace>
       <replace>makedirs</replace>
+      <replace>!= &quot;nan&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -152,7 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1372" />
@@ -177,11 +169,6 @@
               <item name="ZombieZoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZombieZoo" type="462c0819:PsiDirectoryNode" />
               <item name="job" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZombieZoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZombieZoo" type="462c0819:PsiDirectoryNode" />
-              <item name="zombie" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -372,20 +359,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1372" height="733" extended-state="0" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.41935483" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20930232" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32698962" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.3633218" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.3565365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38927335" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3073005" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,10 +388,10 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.3633218" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.3565365" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32698962" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38927335" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38879457" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -426,26 +413,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>144</line>
+          <line>189</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
           <line>90</line>
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="55" />
+          <line>113</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="56" />
+          <line>115</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
+          <line>111</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="79" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -606,27 +603,10 @@
     <entry file="file://$PROJECT_DIR$/zombie/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="1471" selection-start-line="1471" selection-end-line="1471" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1072">
-          <caret line="116" column="23" lean-forward="true" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
-          <folding>
-            <element signature="e#47#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="2618" lean-forward="true" selection-start-line="2618" selection-end-line="2618" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/Python36-32/Lib/pathlib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -725,23 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -753,13 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="476" selection-start-line="476" selection-end-line="476" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/generic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="6116" selection-start-line="6116" selection-end-line="6116" />
         </state>
       </provider>
     </entry>
@@ -791,13 +740,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="4276" selection-start-line="4276" selection-end-line="4276" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#47#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="1268" selection-start-line="1268" selection-end-line="1268" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/job/merge_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="174">
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#2847#5315#0" />
+            <element signature="e#2972#5527#0" />
           </folding>
         </state>
       </provider>

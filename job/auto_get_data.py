@@ -16,9 +16,9 @@ ap.add_argument("-t", "--timerange", help="from when to when, in '2099/11/11/11/
 args = vars(ap.parse_args())
 
 # open program and login
-# program_path = args["exe"]
-# get_data.open_pg(program_path)
-# get_data.login(args["usr"], args["pwd"])
+program_path = args["exe"]
+get_data.open_pg(program_path)
+get_data.login(args["usr"], args["pwd"])
 
 # get data and store in into temp dir
 tmp_sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
