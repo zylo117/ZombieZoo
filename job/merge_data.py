@@ -87,6 +87,7 @@ def merge_gfc_data(material_data, gfc_up_data_path, gfc_down_data_path):
     fusion_data = pd.merge(material_data, gfc_up_data, how="left", left_on="Lot", right_on="在制品代码")
     fusion_data = pd.merge(fusion_data, gfc_down_data, how="left", left_on="Lot", right_on="在制品代码", suffixes=("_up", "_down"))
 
+    fusion_data = fusion_data.fillna(0)
     return fusion_data
 
 
@@ -221,7 +222,6 @@ if __name__ == "__main__":
     material_data.to_csv(data_path + "material.csv", encoding="utf-8", index=False)
 
     fusion_data = merge_gfc_data(material_data, gfc_up_csv_path, gfc_down_csv_path)
-    fusion_data = fusion_data.fillna(0)
     while True:
         try:
             fusion_data.to_csv(data_path + "fusion.csv", encoding="utf-8", index=False)

@@ -16,9 +16,9 @@ ap.add_argument("-t", "--timerange", help="from when to when, in '2099/11/11/11/
 args = vars(ap.parse_args())
 
 # open program and login
-program_path = args["exe"]
-get_data.open_pg(program_path)
-get_data.login(args["usr"], args["pwd"])
+# program_path = args["exe"]
+# get_data.open_pg(program_path)
+# get_data.login(args["usr"], args["pwd"])
 
 # get data and store in into temp dir
 tmp_sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
@@ -38,11 +38,11 @@ if category == "Granite":
     aa_code = ["AACV125             1A", "AACV126             1A", "AACV127             1A", "AACV128             1A"]
     ircf_code = ["G-816-00424-AGC", "G-816-00424-PTOT"]
 
-get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date, category, tmp_sava_path + "gfc_up.csv", interval=0.5)
-get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date, category, tmp_sava_path + "gfc_down.csv", interval=0.5)
-get_data.get_material_data(lens_code, old_date, new_date, tmp_sava_path + "lens.csv", interval=0.5)
-get_data.get_material_data(aa_code, old_date, new_date, tmp_sava_path + "aa.csv", interval=0.5)
-get_data.get_material_data(ircf_code, old_date, new_date, tmp_sava_path + "ircf.csv", interval=0.5)
+# get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date, category, tmp_sava_path + "gfc_up.csv", interval=0.5)
+# get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date, category, tmp_sava_path + "gfc_down.csv", interval=0.5)
+# get_data.get_material_data(lens_code, old_date, new_date, tmp_sava_path + "lens.csv", interval=0.5)
+# get_data.get_material_data(aa_code, old_date, new_date, tmp_sava_path + "aa.csv", interval=0.5)
+# get_data.get_material_data(ircf_code, old_date, new_date, tmp_sava_path + "ircf.csv", interval=0.5)
 
 # move or merge the new data
 target_path = args["out"] + args["category"] + "/"

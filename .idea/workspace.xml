@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/job/auto_get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/auto_get_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/merge_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/merge_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+            <state relative-caret-position="145">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#3217#4048#0" />
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="268" column="24" selection-start-line="268" selection-start-column="24" selection-end-line="268" selection-end-column="24" />
+            <state relative-caret-position="268">
+              <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#201#749#0" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="auto_get_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+            <state relative-caret-position="203">
+              <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -114,16 +113,16 @@
       <find>&quot;2018/04/19</find>
       <find>args[&quot;out&quot;]</find>
       <find>up</find>
-      <find>+ &quot;/07/00/00&quot;</find>
+      <find />
       <find>global_</find>
-      <find>args[&quot;out&quot;] + args[&quot;category&quot;]</find>
+      <find />
       <find>/</find>
       <find>lcb_data</find>
       <find>&quot;lcb_data</find>
       <find>mkdir</find>
       <find>read_csv</find>
       <find>][</find>
-      <find>!= np.nan</find>
+      <find />
       <find>nan</find>
     </findStrings>
     <replaceStrings>
@@ -131,13 +130,13 @@
       <replace>&quot;G</replace>
       <replace>/</replace>
       <replace>date</replace>
-      <replace>args[&quot;out&quot;] + args[&quot;category&quot;]</replace>
+      <replace />
       <replace>down</replace>
       <replace>target_path</replace>
       <replace>material_data</replace>
       <replace>&quot;material_data</replace>
       <replace>makedirs</replace>
-      <replace>!= &quot;nan&quot;</replace>
+      <replace />
       <replace>0</replace>
     </replaceStrings>
   </component>
@@ -160,9 +159,9 @@
         <option value="$PROJECT_DIR$/zombie/window_operation.py" />
         <option value="$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/common.py" />
         <option value="$PROJECT_DIR$/job/analyze_data.py" />
+        <option value="$PROJECT_DIR$/job/get_data.py" />
         <option value="$PROJECT_DIR$/job/auto_get_data.py" />
         <option value="$PROJECT_DIR$/job/merge_data.py" />
-        <option value="$PROJECT_DIR$/job/get_data.py" />
       </list>
     </option>
   </component>
@@ -204,10 +203,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\ZombieZoo\zombie" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\ZombieZoo\zombie" />
     </key>
   </component>
@@ -223,7 +222,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.joblist">
+  <component name="RunManager" selected="Python.joblist (1)">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -359,8 +358,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.joblist" />
         <item itemvalue="Python.merge_data" />
+        <item itemvalue="Python.joblist" />
         <item itemvalue="Python.window_operation" />
         <item itemvalue="Python.job_list" />
         <item itemvalue="Python.temp" />
@@ -390,7 +389,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32597622" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.13921902" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.22580644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
@@ -440,12 +439,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>89</line>
+          <line>90</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
@@ -743,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#47#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -774,33 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job/merge_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#3217#4048#0" />
-            <element signature="e#2972#5527#0" />
-            <element signature="e#3606#3877#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/job/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="268" column="24" selection-start-line="268" selection-start-column="24" selection-end-line="268" selection-end-column="24" />
+        <state relative-caret-position="268">
+          <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#201#749#0" />
@@ -809,6 +770,39 @@
             <element signature="e#3892#4395#0" />
             <element signature="e#4422#4531#0" />
             <element signature="e#4555#4823#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#47#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job/merge_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#3217#4048#0" />
+            <element signature="e#2972#5527#0" />
+            <element signature="e#3606#3877#0" />
           </folding>
         </state>
       </provider>
