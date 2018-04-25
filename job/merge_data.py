@@ -1,3 +1,5 @@
+import time
+
 import pandas as pd
 import numpy as np
 import csv
@@ -71,11 +73,21 @@ def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, encoding="
     material_data = header_rename(material_data, rename_dict)
 
     # extract the wanted col
-    material_data = material_data[wanted_col]
+    material_data = material_data[wanted_col].fillna(0)
 
     material_data = mutate_data(material_data)
 
     return material_data
+
+
+def merge_gfc_data(material_data, gfc_up_data_path, gfc_down_data_path):
+    gfc_up_data = pd.read_csv(gfc_up_data_path)
+    gfc_down_data = pd.read_csv(gfc_down_data_path)
+
+    fusion_data = pd.merge(material_data, gfc_up_data, how="left", left_on="Lot", right_on="在制品代码")
+    fusion_data = pd.merge(fusion_data, gfc_down_data, how="left", left_on="Lot", right_on="在制品代码", suffixes=("_up", "_down"))
+
+    return fusion_data
 
 
 def mutate_data(material_data):
@@ -88,15 +100,12 @@ def mutate_data(material_data):
     material_data["Category"] = material_data["Product Name"].apply(lambda x: _judge_category(x))
 
     # parse_IRCF_details
-    material_data = _parse_IRCF_details(material_data)
+    material_data = _parse_ircf_details(material_data)
 
     # parse_Lens_details
     material_data = _parse_lens_details(material_data)
 
     return material_data
-
-# LBTTXB2844B01X
-# LB0A0A6845E58T
 
 
 def _judge_category(x):
@@ -105,7 +114,7 @@ def _judge_category(x):
     category_header, category_footer = x.split("-")
     category_footer = category_footer.split("_")[0]
 
-    sensor_model = category_header[:-1].strip("IU")
+    sensor_model = category_header[:5].strip("IU")
     sub_category = category_header.strip("IU"+sensor_model).split("N")[-1]
     sub_config = category_footer.split("Q")[-1]
 
@@ -129,27 +138,28 @@ def _judge_category(x):
         elif sub_config == "3":
             return "Syrup-S"
 
+
 def _parse_lens_details(material_data):
     # simplify Lens vendor
-    material_data["Lens Vendor"] = material_data["Lens Vendor"].apply(lambda x: str(x).split("-")[-1])
+    material_data["Lens Vendor"] = material_data["Lens Vendor"].apply(lambda x: str(x).split("-")[-1] if x != "0" else None)
     material_data = insert_col(material_data, "Lens Parent Lot", after_col_name="Lens Lot")
-    material_data["Lens Parent Lot"] = material_data["Lens Lot"].apply(lambda x: str(x)[:11])
+    material_data["Lens Parent Lot"] = material_data["Lens Lot"].apply(lambda x: str(x)[:11] if x != "0" else None)
     # get Lens cav, tool, etc.
-    material_data["Lens Factory"] = material_data["Lens Parent Lot"].apply(
-        lambda x: str(x)[0] if x != "nan" else np.nan)
-    material_data["Lens Project"] = material_data["Lens Parent Lot"].apply(
-        lambda x: str(x)[1] if x != "nan" else np.nan)
-    material_data["Lens Tool"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[2:4] if x != "nan" else np.nan)
-    material_data["Lens Cavity"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[4] if x != "nan" else np.nan)
-    material_data["Lens Revision"] = material_data["Lens Parent Lot"].apply(
-        lambda x: str(x)[5:7] if x != "nan" else np.nan)
-    material_data["Lens Date"] = material_data["Lens Parent Lot"].apply(
-        lambda x: str(int(x[7], 36) + 2010) + "/" + str(int(x[8], 36)) + "/" + str(
-            int(x[9], 36)) if x != "nan" else np.nan)
+    material_data["Lens Factory"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[0] if x != "0" else None)
+    material_data["Lens Project"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[1] if x != "0" else None)
+    material_data["Lens Tool"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[2:4] if x != "0" else None)
+    material_data["Lens Cavity"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[4] if x != "0" else None)
+    material_data["Lens Revision"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[5:7] if x != "0" else None)
+    material_data["Lens Date"] = material_data["Lens Parent Lot"].apply(lambda x: str(int(x[7], 36) + 2010) + "/" + str(int(x[8], 36)) + "/" + str(int(x[9], 36)) if x != "0" else None)
+
+    # Category's special
+    material_data["Lens Factory"].loc[material_data["Category"] == "Angel"] = material_data["Lens Factory"].apply(lambda x: str(x)[-1] if x != "nan" else np.nan)
+    material_data["Lens Project"].loc[material_data["Category"] == "Angel"] = material_data["Lens Project"].apply(lambda x: str(x)[0:2] if x != "nan" else np.nan)
+
     return material_data
 
 
-def _parse_IRCF_details(material_data):
+def _parse_ircf_details(material_data):
     pd.options.mode.chained_assignment = None  # default='warn' disable: SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame
     # simplify IRCF vendor
     material_data["IRCF Vendor"] = material_data["IRCF Vendor"].apply(lambda x: str(x).split("-")[-1])
@@ -207,9 +217,20 @@ if __name__ == "__main__":
     aa_csv_path = data_path + "aa.csv"
     ircf_csv_path = data_path + "ircf.csv"
 
-    ircf_aa_lens_gfc_all = generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, "utf-8")
+    material_data = generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, "utf-8")
+    material_data.to_csv(data_path + "material.csv", encoding="utf-8", index=False)
 
-    ircf_aa_lens_gfc_all.to_csv(data_path + "out.csv", encoding="utf-8", index=False)
+    fusion_data = merge_gfc_data(material_data, gfc_up_csv_path, gfc_down_csv_path)
+    fusion_data = fusion_data.fillna(0)
+    while True:
+        try:
+            fusion_data.to_csv(data_path + "fusion.csv", encoding="utf-8", index=False)
+        except:
+            print("File is being overwriting, please close it")
+            time.sleep(3)
+            continue
+        finally:
+            break
 
     # ircf_data.to_csv(data_path + "outfuck.csv", header=False, index=False, mode="a", encoding="gbk")
 

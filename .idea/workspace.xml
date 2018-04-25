@@ -19,12 +19,23 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+            <state relative-caret-position="176">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#3217#4048#0" />
                 <element signature="e#2972#5527#0" />
+                <element signature="e#3606#3877#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="merge.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -41,8 +52,8 @@
       <file leaf-file-name="indexing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="1268" selection-start-line="1268" selection-end-line="1268" />
+            <state relative-caret-position="-45">
+              <caret line="2022" selection-start-line="2022" selection-end-line="2022" />
             </state>
           </provider>
         </entry>
@@ -50,8 +61,8 @@
       <file leaf-file-name="auto_get_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+            <state relative-caret-position="320">
+              <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -102,6 +113,7 @@
       <find>read_csv</find>
       <find>][</find>
       <find>!= np.nan</find>
+      <find>nan</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
@@ -115,6 +127,7 @@
       <replace>&quot;material_data</replace>
       <replace>makedirs</replace>
       <replace>!= &quot;nan&quot;</replace>
+      <replace>0</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -199,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.joblist (1)">
+  <component name="RunManager" selected="Python.merge_data">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -363,14 +376,14 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20930232" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32698962" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32597622" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.3565365" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.26825127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3073005" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3073005" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -411,36 +424,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="50" />
+          <line>226</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="68" />
+          <line>223</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>90</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>115</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/job/merge_data.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="78" />
+          <line>89</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="95" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -601,13 +599,6 @@
     <entry file="file://$PROJECT_DIR$/zombie/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/836067799/nt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -762,20 +753,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="2022" selection-start-line="2022" selection-end-line="2022" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/job/auto_get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+        <state relative-caret-position="320">
+          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py">
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="1268" selection-start-line="1268" selection-end-line="1268" />
+        <state relative-caret-position="198">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -788,11 +786,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/job/merge_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+        <state relative-caret-position="176">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#3217#4048#0" />
             <element signature="e#2972#5527#0" />
+            <element signature="e#3606#3877#0" />
           </folding>
         </state>
       </provider>
