@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/job/auto_get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/auto_get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/merge_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/merge_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/job/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="165">
+              <caret line="152" column="71" selection-start-line="152" selection-start-column="71" selection-end-line="152" selection-end-column="71" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#3217#4048#0" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="merge.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="50" column="18" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="18" />
+            <state relative-caret-position="69">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -113,31 +112,34 @@
       <find>&quot;2018/04/19</find>
       <find>args[&quot;out&quot;]</find>
       <find>up</find>
-      <find />
+      <find>+ &quot;/07/00/00&quot;</find>
       <find>global_</find>
-      <find />
+      <find>args[&quot;out&quot;] + args[&quot;category&quot;]</find>
       <find>/</find>
       <find>lcb_data</find>
       <find>&quot;lcb_data</find>
       <find>mkdir</find>
       <find>read_csv</find>
       <find>][</find>
-      <find />
+      <find>!= np.nan</find>
       <find>nan</find>
+      <find>date</find>
+      <find>Lens Date</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
       <replace>&quot;G</replace>
       <replace>/</replace>
       <replace>date</replace>
-      <replace />
+      <replace>args[&quot;out&quot;] + args[&quot;category&quot;]</replace>
       <replace>down</replace>
       <replace>target_path</replace>
       <replace>material_data</replace>
       <replace>&quot;material_data</replace>
       <replace>makedirs</replace>
-      <replace />
+      <replace>!= &quot;nan&quot;</replace>
       <replace>0</replace>
+      <replace>Lens Production Date</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -744,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/series.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -794,10 +789,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/reshape/merge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/job/merge_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="165">
+          <caret line="152" column="71" selection-start-line="152" selection-start-column="71" selection-end-line="152" selection-end-column="71" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#3217#4048#0" />

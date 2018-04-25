@@ -151,7 +151,7 @@ def _parse_lens_details(material_data):
     material_data["Lens Tool"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[2:4] if x != "0" else None)
     material_data["Lens Cavity"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[4] if x != "0" else None)
     material_data["Lens Revision"] = material_data["Lens Parent Lot"].apply(lambda x: str(x)[5:7] if x != "0" else None)
-    material_data["Lens Date"] = material_data["Lens Parent Lot"].apply(lambda x: str(int(x[7], 36) + 2010) + "/" + str(int(x[8], 36)) + "/" + str(int(x[9], 36)) if x != "0" else None)
+    material_data["Lens Production Date"] = material_data["Lens Parent Lot"].apply(lambda x: str(int(x[7], 36) + 2010) + "/" + str(int(x[8], 36)) + "/" + str(int(x[9], 36)) if x != "0" else None)
 
     # Category's special
     material_data["Lens Factory"].loc[material_data["Category"] == "Angel"] = material_data["Lens Factory"].apply(lambda x: str(x)[-1] if x != "nan" else np.nan)
