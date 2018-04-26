@@ -1,10 +1,11 @@
+import datetime
 import time
 
 import pandas as pd
 import numpy as np
 import csv
 
-rename_dict = {"材料代码_x": "IRCF Vendor",
+material_rename_dict = {"材料代码_x": "IRCF Vendor",
                "材料批号_x": "IRCF Lot",
                "在制品代码_x": "Lot",
                "交易时间_x": "FC Process Date",
@@ -16,6 +17,14 @@ rename_dict = {"材料代码_x": "IRCF Vendor",
                "材料批号": "Lens Lot",
                "交易时间": "Lens Plasma Process Date",
                "机台代码": "Lens Plasma Mac No"}
+
+gfc_rename_dict = {"机种 Config 代号_up": "Category_Config",
+                   "机台代码_up": "GFC-UP Mac No",
+                   "MoveOut时间_up": "GFC-UP Process Date",
+                   "作业数_up": "GFC-UP Input Quantity",
+                   "机台代码_down": "GFC-DOWN Mac No",
+                   "MoveOut时间_down": "GFC-DOWN Process Date",
+                   "作业数_down": "GFC-DOWN Input Quantity"}
 
 wanted_col = ["Lot",
               "Product Name",
@@ -70,7 +79,7 @@ def generate_material_data(ircf_csv_path, aa_csv_path, lens_csv_path, encoding="
     material_data = pd.merge(material_data, lens_data, how="left", left_on="材料批号_y", right_on="在制品代码")
 
     # rename header
-    material_data = header_rename(material_data, rename_dict)
+    material_data = header_rename(material_data, material_rename_dict)
 
     # extract the wanted col
     material_data = material_data[wanted_col].fillna(0)
@@ -87,8 +96,26 @@ def merge_gfc_data(material_data, gfc_up_data_path, gfc_down_data_path):
     fusion_data = pd.merge(material_data, gfc_up_data, how="left", left_on="Lot", right_on="在制品代码")
     fusion_data = pd.merge(fusion_data, gfc_down_data, how="left", left_on="Lot", right_on="在制品代码", suffixes=("_up", "_down"))
 
+    fusion_data = header_rename(fusion_data, gfc_rename_dict)
+
+    fusion_data["GFC-UP Process Date 7:00"] = fusion_data["GFC-UP Process Date"].apply(lambda x: str(_delayed_date(x)))
+    fusion_data["GFC-DOWN Process Date 7:00"] = fusion_data["GFC-DOWN Process Date"].apply(lambda x: str(_delayed_date(x)))
+
     fusion_data = fusion_data.fillna(0)
     return fusion_data
+
+
+def _delayed_date(x):
+    try:
+        x = str(x)
+    except:
+        return None
+    if x != "nan":
+        x_date = datetime.datetime.strptime(x, "%Y/%m/%d %H:%M:%S")
+        x_date_delta = x_date - datetime.timedelta(hours=7)
+        return x_date_delta.date()
+    else:
+        return None
 
 
 def mutate_data(material_data):

@@ -17,6 +17,8 @@ args = vars(ap.parse_args())
 
 # get data and store in into temp dir
 tmp_sava_path = "c:\\temp\\"  # must use "\\" instead of "/"
+if not os.path.exists(tmp_sava_path):
+    os.makedirs(tmp_sava_path)
 
 if args["timerange"] is None:
     new_date = datetime.datetime.now()
@@ -64,11 +66,11 @@ if update:
     get_data.open_pg(program_path)
     get_data.login(args["usr"], args["pwd"])
 
-    # get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date, category, tmp_sava_path + "gfc_up.csv", interval=0.5)
-    # get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date, category, tmp_sava_path + "gfc_down.csv", interval=0.5)
-    # get_data.get_material_data(lens_code, old_date, new_date, tmp_sava_path + "lens.csv", interval=0.5)
-    # get_data.get_material_data(aa_code, old_date, new_date, tmp_sava_path + "aa.csv", interval=0.5)
-    # get_data.get_material_data(ircf_code, old_date, new_date, tmp_sava_path + "ircf.csv", interval=0.5)
+    get_data.get_gfc_lot_data("GFCUP", "GFC-UP", old_date, new_date, category, tmp_sava_path + "gfc_up.csv", interval=0.5)
+    get_data.get_gfc_lot_data("GFCDWN", "GFC-DWN", old_date, new_date, category, tmp_sava_path + "gfc_down.csv", interval=0.5)
+    get_data.get_material_data(lens_code, old_date, new_date, tmp_sava_path + "lens.csv", interval=0.5)
+    get_data.get_material_data(aa_code, old_date, new_date, tmp_sava_path + "aa.csv", interval=0.5)
+    get_data.get_material_data(ircf_code, old_date, new_date, tmp_sava_path + "ircf.csv", interval=0.5)
 
     # move or merge the new data
     target_path = args["out"] + args["category"] + "/"
@@ -134,7 +136,7 @@ if update:
     if not os.path.exists(target_path + "lcb_data.csv"):
         fusion_data.to_csv(target_path + "lcb_data.csv", encoding="utf-8", index=False)
     else:
-        fusion_data.to_csv(target_path + "lcb_data.csv", header=False, index=False, mode="a", encoding="utf-8")
+        fusion_data.to_csv(target_path + "lcb_data.csv", header=True, index=False, mode="w", encoding="utf-8")
 
     # save current date to disk
     pickle_file = open(args["out"] + args["category"] + "/update.status", "wb")
