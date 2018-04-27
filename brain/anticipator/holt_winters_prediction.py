@@ -146,7 +146,8 @@ class HoltWintersPrediction:
                                              n in zip(Y[:], forecast[:])]) / len(Y))
         return rmse
 
-    def predict(self, x):
+    def predict(self):
+        x = self.raw_data
         if self.forecast_method == "auto":
             fa = self.holt_winters_additive(x)
             fm = self.holt_winters_multiplicative(x)
@@ -186,10 +187,11 @@ if __name__ == "__main__":
         y_additive[i] = y_additive[i] + season[i % 10] + noise[i]
         y_multiplicative[i] = y_multiplicative[i] * season[i % 10] + noise[i]
 
-    hw = HoltWintersPrediction(y_additive, forecast_len=50, forecast_method="additive")
+    hw_add = HoltWintersPrediction(y_additive, forecast_len=50, forecast_method="additive")
+    hw_mul = HoltWintersPrediction(y_multiplicative, forecast_len=50, forecast_method="multiplicative")
 
-    forecast_1 = hw.predict(y_additive)
-    forecast_2 = hw.predict(y_multiplicative)
+    forecast_1 = hw_add.predict()
+    forecast_2 = hw_mul.predict()
     plt.plot(forecast_1, label='forecast')
     plt.plot(y_additive, label='noisy')
     plt.legend()

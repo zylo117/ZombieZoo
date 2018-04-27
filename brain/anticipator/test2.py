@@ -1,8 +1,7 @@
 import job.merge_data as merge_data
 import pandas as pd
 import numpy as np
-import math
-from seasonal import fit_seasons, adjust_seasons
+from brain.anticipator.holt_winters_prediction import HoltWintersPrediction
 import matplotlib.pyplot as plt
 
 gfc_lcb_items = ["GFC-UP Input Quantity",
@@ -61,17 +60,12 @@ if __name__ == "__main__":
 
     lcb_test_trend = fusion_pivot_list[-1]["LCB Failure Rate"].tolist()
 
-    seasons, trend = fit_seasons(lcb_test_trend)
-    adjusted = adjust_seasons(lcb_test_trend, seasons=seasons)
-    residual = adjusted - trend
+    lcb_hw = HoltWintersPrediction(lcb_test_trend, forecast_len=50, forecast_method="additive")
 
-    plt.figure()
-    plt.plot(lcb_test_trend, label='noisy')
-    plt.plot(lcb_test_trend - residual, label='trend+season')
-    plt.plot(trend, label='trend')
-    plt.plot(seasons, label='season_period')
-    plt.plot(residual, label='residual')
-    plt.legend(loc='upper left')
+    lcb_forecast = lcb_hw.predict()
+    plt.plot(lcb_forecast, label='lcb_forecast')
+    plt.plot(lcb_test_trend, label='lcb_test_trend')
+    plt.legend()
     plt.show()
 
 
