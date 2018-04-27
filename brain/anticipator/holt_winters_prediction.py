@@ -18,9 +18,10 @@ class HoltWintersPrediction:
         """
         self.raw_data = raw_data
         self.season, self.trend = fit_seasons(self.raw_data)
-        self.season_period = len(self.season)
-        self.adjusted = adjust_seasons(self.raw_data, seasons=self.season)
-        self.residual = self.adjusted - self.trend
+        if self.season is None:
+            self.season_period = len(self.trend) // 4
+        else:
+            self.season_period = len(self.season)
         self.forecast_len = forecast_len
         self.forecast_method = forecast_method
 

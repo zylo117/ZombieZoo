@@ -58,14 +58,28 @@ if __name__ == "__main__":
         fusion_pivot_list.append(pivot)
         # pivot.to_csv("C:/TEMP/%s_pivot.csv" % category)
 
-    lcb_test_trend = fusion_pivot_list[-1]["LCB Failure Rate"].tolist()
+    e3_lcb_test_trend = fusion_pivot_list[-1]["LCB Failure Rate"].tolist()
+    e1_lcb_test_trend = fusion_pivot_list[-1]["LCB Failure Rate"].tolist()
 
-    lcb_hw = HoltWintersPrediction(lcb_test_trend, forecast_len=50, forecast_method="additive")
+    lcb_hw3 = HoltWintersPrediction(e3_lcb_test_trend, forecast_len=50, forecast_method="additive")
+    lcb_hw1 = HoltWintersPrediction(e1_lcb_test_trend, forecast_len=50, forecast_method="additive")
 
-    lcb_forecast = lcb_hw.predict()
-    plt.plot(lcb_forecast, label='lcb_forecast')
-    plt.plot(lcb_test_trend, label='lcb_test_trend')
+    lcb_forecast3 = lcb_hw3.predict()
+    lcb_forecast1 = lcb_hw1.predict()
+    plt.figure(1)
+    # plt.subplot(211)
+    plt.plot(np.hstack([e3_lcb_test_trend, lcb_forecast3[22:]]), label='lcb_forecast_E3')
+    plt.plot(e3_lcb_test_trend, label='e3_lcb_test_trend')
     plt.legend()
+    plt.axis([0, 80, 0.002, 0.006])
+
+    # plt.subplot(212)
+    # plt.plot(lcb_forecast1, label='lcb_forecast_E1')
+    # plt.plot(e3_lcb_test_trend, label='e1_lcb_test_trend')
+    # plt.legend()
+    # plt.axis([0, 80, 0.002, 0.006])
+
+
     plt.show()
 
 
