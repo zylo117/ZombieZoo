@@ -1,6 +1,9 @@
 import job.merge_data as merge_data
 import pandas as pd
 import numpy as np
+import math
+from seasonal import fit_seasons, adjust_seasons
+import matplotlib.pyplot as plt
 
 gfc_lcb_items = ["GFC-UP Input Quantity",
                  "10_Bin17_LCB(center)",
@@ -38,5 +41,38 @@ if __name__ == "__main__":
         "03_Bin19_LCB(corner)"] + fusion_data["77_Bin22_LCBraw"] + fusion_data["78_Bin23_LCBaccum"] + fusion_data[
                                       "79_Bin25_LCB_Retest_Count"]
 
-    fuck = pd.pivot_table(fusion_data, index=["Category_Config"], columns=["GFC-UP Process Date 7:00"], aggfunc=np.sum)
+    fusion_data["Category_Config"] = fusion_data["Category_Config"].apply(lambda x: str(x))
+    fusion_pivot = pd.pivot_table(fusion_data, index=["Category_Config", "GFC-UP Process Date 7:00"], columns=[],
+                                  values=["GFC-UP Input Quantity", "LCB_UP_QTY",
+                                           "GFC-DOWN Input Quantity", "LCB_DOWN_QTY"], aggfunc=np.sum)
+
+    fusion_pivot["LCB Failure Rate"] = fusion_pivot["LCB_UP_QTY"] / fusion_pivot["GFC-UP Input Quantity"] + \
+                                       fusion_pivot["LCB_DOWN_QTY"] / fusion_pivot["GFC-DOWN Input Quantity"]
+
+    category_list = pd.pivot_table(fusion_data, index=["Category_Config"], values=["GFC-UP Input Quantity", ])
+    category_list = category_list._stat_axis._data
+    category_list = [str(i) for i in category_list]
+
+    fusion_pivot_list = []
+    for category in category_list:
+        pivot = fusion_pivot.query("Category_Config == ['%s']" % category)
+        fusion_pivot_list.append(pivot)
+        # pivot.to_csv("C:/TEMP/%s_pivot.csv" % category)
+
+    lcb_test_trend = fusion_pivot_list[-1]["LCB Failure Rate"].tolist()
+
+    seasons, trend = fit_seasons(lcb_test_trend)
+    adjusted = adjust_seasons(lcb_test_trend, seasons=seasons)
+    residual = adjusted - trend
+
+    plt.figure()
+    plt.plot(lcb_test_trend, label='noisy')
+    plt.plot(lcb_test_trend - residual, label='trend+season')
+    plt.plot(trend, label='trend')
+    plt.plot(seasons, label='season_period')
+    plt.plot(residual, label='residual')
+    plt.legend(loc='upper left')
+    plt.show()
+
+
     print(0)
