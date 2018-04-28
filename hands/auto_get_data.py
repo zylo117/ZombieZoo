@@ -3,8 +3,8 @@ import datetime
 import os
 import shutil
 import pickle
-import job.get_data as get_data
-import job.merge_data as merge_data
+import hands.get_data as get_data
+import hands.merge_data as merge_data
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--usr", help="username", type=str, required=True)

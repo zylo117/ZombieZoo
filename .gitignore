@@ -141,3 +141,7 @@ target_program/*
 *.spec
 .idea/workspace.xml
 *.xml
+
+*.csv
+*.xlsx
+*.xls

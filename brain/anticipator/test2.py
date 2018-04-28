@@ -1,4 +1,4 @@
-import job.merge_data as merge_data
+import hands.merge_data as merge_data
 import pandas as pd
 import numpy as np
 from brain.anticipator.holt_winters_prediction import HoltWintersPrediction
