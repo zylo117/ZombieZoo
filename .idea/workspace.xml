@@ -19,23 +19,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="holt_winters_prediction.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+            <state relative-caret-position="172">
+              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
               <folding>
-                <element signature="e#10#20#0" expanded="true" />
-                <element signature="e#1641#1932#0" />
+                <element signature="e#10#25#0" expanded="true" />
+                <element signature="e#2807#3292#0" />
+                <element signature="e#3461#4434#0" />
+                <element signature="e#3635#4550#0" />
               </folding>
             </state>
           </provider>
@@ -44,11 +37,20 @@
       <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="26" column="89" lean-forward="true" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+            <state relative-caret-position="162">
+              <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="series.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/series.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
             </state>
           </provider>
         </entry>
@@ -56,38 +58,11 @@
       <file leaf-file-name="merge_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hands/merge_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="113" column="47" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="66" />
+            <state relative-caret-position="197">
+              <caret line="190" column="4" selection-start-line="190" selection-start-column="4" selection-end-line="190" selection-end-column="45" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reshape.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/reshape/reshape.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activation_monitor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QBoxLayout.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtWidgets/QBoxLayout.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -104,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>,</find>
       <find>G</find>
       <find>\\</find>
       <find>&quot;2018/04/19</find>
@@ -128,12 +102,13 @@
       <find>0.358</find>
       <find>season_period</find>
       <find>forecast_len</find>
-      <find>strp</find>
       <find>Center</find>
       <find>center</find>
       <find>label_2</find>
       <find>str</find>
       <find>AlignLeft</find>
+      <find>ico</find>
+      <find>strp</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
@@ -188,6 +163,7 @@
         <option value="$PROJECT_DIR$/brain/anticipator/hw/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/test2.py" />
+        <option value="$PROJECT_DIR$/face/activation_monitor.py" />
         <option value="$PROJECT_DIR$/brain/gfc_activation_calculator.py" />
         <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
       </list>
@@ -434,12 +410,12 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15390335" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.31862745" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.32189542" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4019608" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4101307" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -517,13 +493,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
-          <line>41</line>
+          <line>51</line>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/face/activation_monitor_logic.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="152" />
+          <line>99</line>
+          <option name="timeStamp" value="167" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -533,12 +509,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="153" />
+      <option name="time" value="168" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/parsers.py" />
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py" />
     <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -627,26 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/reshape/reshape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="3590" column="8" selection-start-line="3590" selection-start-column="8" selection-end-line="3590" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hands/auto_get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hands/merge_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="113" column="47" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtCore/Qt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -688,10 +636,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtWidgets/QDateTimeEdit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="26" column="89" lean-forward="true" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+        <state relative-caret-position="129">
+          <caret line="289" column="19" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hands/auto_get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/reshape/reshape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hands/merge_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="190" column="4" selection-start-line="190" selection-start-column="4" selection-end-line="190" selection-end-column="45" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -700,25 +678,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="216">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/series.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+        <state relative-caret-position="111">
+          <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+        <state relative-caret-position="172">
+          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
           <folding>
-            <element signature="e#10#20#0" expanded="true" />
-            <element signature="e#1641#1932#0" />
+            <element signature="e#10#25#0" expanded="true" />
+            <element signature="e#2807#3292#0" />
+            <element signature="e#3461#4434#0" />
+            <element signature="e#3635#4550#0" />
           </folding>
         </state>
       </provider>
