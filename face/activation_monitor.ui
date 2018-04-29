@@ -22,7 +22,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ico.png</normaloff>ico.png</iconset>
+    <normaloff>C:/Users/zylo1/.designer/backup/ico.png</normaloff>C:/Users/zylo1/.designer/backup/ico.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,9">
@@ -166,12 +166,12 @@
           </property>
           <property name="dateTime">
            <datetime>
-            <hour>23</hour>
-            <minute>59</minute>
-            <second>59</second>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
             <year>2018</year>
             <month>4</month>
-            <day>1</day>
+            <day>2</day>
            </datetime>
           </property>
           <property name="displayFormat">
@@ -233,7 +233,7 @@
          </font>
         </property>
         <property name="text">
-         <string> </string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -301,7 +301,7 @@
          </font>
         </property>
         <property name="text">
-         <string> </string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -368,7 +368,7 @@
            <number>0</number>
           </property>
           <item>
-           <layout class="QGridLayout" name="gridLayout" columnstretch="1,9,1"/>
+           <layout class="QGridLayout" name="gridLayout" columnstretch="1"/>
           </item>
          </layout>
         </widget>

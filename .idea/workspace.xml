@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/brain/gfc_activation_calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ZombieZoo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ZombieZoo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brain/gfc_activation_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/brain/gfc_activation_calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/activation_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/activation_monitor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/activation_monitor_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor_logic.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,31 +22,30 @@
       <file leaf-file-name="holt_winters_prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="-144">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="135">
+              <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
               <folding>
-                <element signature="e#11#21#0" expanded="true" />
-                <element signature="e#897#1629#0" />
+                <element signature="e#10#20#0" expanded="true" />
                 <element signature="e#1641#1932#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="216">
+              <caret line="26" column="89" lean-forward="true" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -67,15 +65,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datetime.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/datetime.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="1365" column="47" lean-forward="true" selection-start-line="1365" selection-start-column="47" selection-end-line="1365" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="reshape.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/reshape/reshape.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,8 +77,17 @@
       <file leaf-file-name="activation_monitor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4158">
-              <caret line="231" column="60" selection-start-line="231" selection-start-column="60" selection-end-line="231" selection-end-column="60" />
+            <state relative-caret-position="-122">
+              <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QBoxLayout.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtWidgets/QBoxLayout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -106,9 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tab</find>
-      <find>enter</find>
-      <find>MouseMask</find>
       <find>,</find>
       <find>G</find>
       <find>\\</find>
@@ -134,6 +129,11 @@
       <find>season_period</find>
       <find>forecast_len</find>
       <find>strp</find>
+      <find>Center</find>
+      <find>center</find>
+      <find>label_2</find>
+      <find>str</find>
+      <find>AlignLeft</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
@@ -188,8 +188,8 @@
         <option value="$PROJECT_DIR$/brain/anticipator/hw/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/test2.py" />
-        <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
         <option value="$PROJECT_DIR$/brain/gfc_activation_calculator.py" />
+        <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
       </list>
     </option>
   </component>
@@ -262,7 +262,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gfc_activation_calculator">
+  <component name="RunManager" selected="Python.activation_monitor_logic">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -398,8 +398,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gfc_activation_calculator" />
         <item itemvalue="Python.activation_monitor_logic" />
+        <item itemvalue="Python.gfc_activation_calculator" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.merge_data" />
         <item itemvalue="Python.holt_winters_prediction (1)" />
@@ -431,15 +431,15 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18884759" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15390335" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.42973855" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.31862745" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3398693" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4019608" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -517,18 +517,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="134" />
+          <line>41</line>
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="139" />
+          <url>file://$PROJECT_DIR$/face/activation_monitor_logic.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -538,13 +533,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="140" />
+      <option name="time" value="153" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/base.py" />
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/common.py" />
-    <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexes/category.py" />
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/io/parsers.py" />
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/pandas/core/indexing.py" />
     <entry file="file://$PROJECT_DIR$/zombie/window_operation.py">
@@ -635,32 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4158">
-          <caret line="231" column="60" selection-start-line="231" selection-start-column="60" selection-end-line="231" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#11#21#0" expanded="true" />
-            <element signature="e#897#1629#0" />
-            <element signature="e#1641#1932#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/reshape/reshape.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -675,19 +641,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="1365" column="47" lean-forward="true" selection-start-line="1365" selection-start-column="47" selection-end-line="1365" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hands/auto_get_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-148">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/_strptime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="361" selection-start-line="361" selection-end-line="361" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="718" column="8" selection-start-line="718" selection-start-column="8" selection-end-line="718" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -701,12 +674,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtCore/Qt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="293" column="4" selection-start-line="293" selection-start-column="4" selection-end-line="293" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtWidgets/QBoxLayout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="216">
+          <caret line="26" column="89" lean-forward="true" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+          <folding>
+            <element signature="e#10#20#0" expanded="true" />
+            <element signature="e#1641#1932#0" />
           </folding>
         </state>
       </provider>
