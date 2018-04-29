@@ -22,7 +22,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ico.png</normaloff>ico.png</iconset>
+    <normaloff>ico.ico</normaloff>ico.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,9">
@@ -254,7 +254,7 @@
         <property name="font">
          <font>
           <family>Calibri</family>
-          <pointsize>7</pointsize>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -301,7 +301,7 @@
         <property name="font">
          <font>
           <family>Calibri</family>
-          <pointsize>7</pointsize>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -351,7 +351,7 @@
         <property name="font">
          <font>
           <family>Calibri</family>
-          <pointsize>7</pointsize>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -369,7 +369,7 @@
         <property name="font">
          <font>
           <family>Calibri</family>
-          <pointsize>7</pointsize>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>

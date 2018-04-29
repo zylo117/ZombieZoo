@@ -2,6 +2,7 @@
 import cv2
 import datetime
 import sys
+import pickle
 import numpy as np
 import pandas as pd
 
@@ -13,19 +14,20 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from face.activation_monitor import Ui_MainWindow
 from brain.gfc_activation_calculator import cal_act
 
-category_header = {"Granite": "Q",
-                   "BlueBerry": "Q",
-                   "Lumber": "H",
-                   "Angel": "A",
-                   "Syrup": "Y"}
-mac_type = {"GFC-UP": "GU", "GFC-DOWN": "GD",
-            "OQC-UP": "QU", "OQC-DOWN": "QD",
-            "CUBE-UP": "CU", "CUBE-DOWN": "CD",
-            "REL-UP": "RU", "REL-DOWN": "RD"}
-mac_no_total = 60
-default_gfc_data_csv_path = "F:/Document/GitHub/ZombieZoo/face/000.csv"
-from_time = "2018/04/28 12:50:50"
-to_time = "2018/04/28 18:50:50"
+category_header_prt = pd.read_csv("./CATEGORY.conf")
+category_header_prt = [category_header_prt["key"].tolist(), category_header_prt["val"].tolist()]
+category_header = {}
+for i in range(len(category_header_prt[0])):
+    category_header[category_header_prt[0][i]] = category_header_prt[1][i]
+
+mac_type_prt = pd.read_csv("./MACTYPE.conf")
+mac_type_prt = [mac_type_prt["key"].tolist(), mac_type_prt["val"].tolist()]
+mac_type = {}
+for i in range(len(mac_type_prt[0])):
+    mac_type[mac_type_prt[0][i]] = mac_type_prt[1][i]
+
+mac_no_total = 99
+default_gfc_data_csv_path = open("./DEFAULT_GFC_DATA_PATH.conf", "rb").read().decode()
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -34,9 +36,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
 
-        self.config = self.category_select.currentText()
-        self.category = self.config.split("-")[0]
-        self.mac_type = self.mac_type_select.currentText()
+        self.config = self.category_select.currentText().lower()
+        self.category = self.config.split("-")[0].lower()
+        self.mac_type = self.mac_type_select.currentText().lower()
         self.mac_name_list = []
         self.activation_status_list = []
         self.yield_val_list = []
@@ -61,7 +63,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for i in range(mac_no_total):
             mac_name = QLabel()
             mac_name.setText("%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
-            mac_name.setMinimumSize(QtCore.QSize(0, 50))
+            mac_name.setMinimumHeight(80)
+            mac_name.setMaximumHeight(160)
             self.gridLayout.addWidget(mac_name, i, 0, 1, 1)
             self.gridLayout.setColumnStretch(0, 1)
             self.mac_name_list.append(mac_name)
@@ -89,9 +92,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridLayout.setColumnStretch(3, 1)
 
     def show_all_activation(self):
-        self.config = self.category_select.currentText()
-        self.category = self.config.split("-")[0]
-        self.mac_type = self.mac_type_select.currentText()
+        self.config = self.category_select.currentText().lower()
+        self.category = self.config.split("-")[0].lower()
+        self.mac_type = self.mac_type_select.currentText().lower()
         for i in range(mac_no_total):
             self.mac_name_list[i].setText(
                 "%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
@@ -131,7 +134,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 act_val = str(np.round(act_val * 100, 2)) + " % "
 
                 act_pic = act_pics["%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
-                act_pic = cv2.resize(act_pic, (800, 10))
+                act_pic = cv2.resize(act_pic, (400, 1))
                 height, width, channel = act_pic.shape
                 pile_width = channel * width
                 act_pic = cv2.cvtColor(act_pic, cv2.COLOR_BGR2RGB)
@@ -139,8 +142,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 self.yield_val_list[i].setText(yield_val)
                 self.activation_val_list[i].setText(act_val)
-                self.activation_status_list[i].setPixmap(
-                    QPixmap.fromImage(q_image).scaled(self.activation_status_list[i].width(), self.activation_status_list[i].height()))
+                self.activation_status_list[i].setPixmap(QPixmap.fromImage(q_image))
             except:
                 self.mac_name_list[i].setHidden(True)
                 self.activation_status_list[i].setHidden(True)
