@@ -37,13 +37,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="383">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+              <folding>
+                <element signature="e#10#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,8 +180,8 @@
         <option value="$PROJECT_DIR$/brain/anticipator/test2.py" />
         <option value="$PROJECT_DIR$/face/activation_monitor.py" />
         <option value="$PROJECT_DIR$/face/activation_monitor.ui" />
-        <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
         <option value="$PROJECT_DIR$/brain/gfc_activation_calculator.py" />
+        <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
       </list>
     </option>
   </component>
@@ -414,6 +426,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20892194" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3251634" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.23856209" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
@@ -435,7 +448,6 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32597622" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info anchor="bottom" id="Python Console" order="8" />
     </layout>
@@ -496,9 +508,19 @@
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="168" />
+          <url>file://$PROJECT_DIR$/face/activation_monitor_logic.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/face/activation_monitor_logic.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/face/activation_monitor_logic.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="179" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -508,7 +530,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="174" />
+      <option name="time" value="180" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -696,15 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="127" column="49" lean-forward="true" selection-start-line="127" selection-start-column="49" selection-end-line="127" selection-end-column="49" />
-          <folding>
-            <element signature="e#294#391#0" />
-            <element signature="e#3489#3579#0" />
-            <element signature="e#3619#3648#0" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="20" column="71" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -715,19 +732,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
+    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="71" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+        <state relative-caret-position="383">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="188">
+          <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#10#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

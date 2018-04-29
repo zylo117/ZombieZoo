@@ -34,9 +34,9 @@
          <widget class="QPushButton" name="manual_load_data">
           <property name="font">
            <font>
-            <family>Lucida Sans</family>
-            <weight>50</weight>
-            <bold>false</bold>
+            <family>Calibri</family>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="text">
@@ -48,7 +48,9 @@
          <widget class="QPushButton" name="reload">
           <property name="font">
            <font>
-            <family>Lucida Sans</family>
+            <family>Calibri</family>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="text">
@@ -62,7 +64,7 @@
        <widget class="QComboBox" name="mac_type_select">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -113,7 +115,7 @@
        <widget class="QComboBox" name="category_select">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -172,9 +174,9 @@
        <widget class="QDateTimeEdit" name="from_time">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
-          <weight>50</weight>
-          <bold>false</bold>
+          <family>Calibri</family>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="dateTime">
@@ -199,9 +201,9 @@
        <widget class="QDateTimeEdit" name="to_time">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
-          <weight>50</weight>
-          <bold>false</bold>
+          <family>Calibri</family>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="dateTime">
@@ -226,7 +228,7 @@
        <widget class="QPushButton" name="auto_load_data">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>10</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -251,7 +253,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>7</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -266,9 +268,9 @@
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
-          <weight>50</weight>
-          <bold>false</bold>
+          <family>Calibri</family>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -280,10 +282,10 @@
        <widget class="QLabel" name="from_time_stamp">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>6</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -298,7 +300,7 @@
        <widget class="QLabel" name="label_activation_status_example">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>7</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -316,10 +318,10 @@
        <widget class="QLabel" name="to_time_stamp">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>6</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -334,9 +336,9 @@
        <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
-          <weight>50</weight>
-          <bold>false</bold>
+          <family>Calibri</family>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -348,7 +350,7 @@
        <widget class="QLabel" name="label_yield_val_example">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>7</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -366,7 +368,7 @@
        <widget class="QLabel" name="label_activation_val_example">
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
+          <family>Calibri</family>
           <pointsize>7</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -391,9 +393,9 @@
         </property>
         <property name="font">
          <font>
-          <family>Lucida Sans</family>
-          <weight>50</weight>
-          <bold>false</bold>
+          <family>Calibri</family>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">

@@ -6,7 +6,7 @@ import numpy as np
 
 
 # assume every product was tested for 5 secs
-time_per_unit = 8
+time_per_unit = 5
 
 def cal_act(gfc_data, from_time=None, to_time=None, category=None):
     if category is not None:
@@ -14,7 +14,10 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
 
     data_by_mac = pd.pivot_table(gfc_data, index=gfc_data["設備"], values=["2D CODE"], aggfunc=len)
     mac_name_list = data_by_mac._stat_axis._data
-    result = {}
+    yield_val = {}
+    activation_val = {}
+    activation_pic = {}
+
 
     if from_time is not None and to_time is not None:
         from_time = datetime.datetime.strptime(from_time, "%Y-%m-%d %H:%M:%S")
@@ -35,12 +38,11 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
         ok_qty = np.count_nonzero(tmp_data["BinNo"] == 1)
 
         if ttl_qty == 0:
-            result[mac_name] = 0
+            yield_val[mac_name] = 0
 
         else:
-            activation = ok_qty / ttl_qty
-
-            result[mac_name] = activation
+            # get yield
+            yield_val[mac_name] = ok_qty / ttl_qty
 
             # create time_color_bar
             ttl_sec = int((to_time - from_time).total_seconds())
@@ -58,18 +60,23 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
             # set ng color
             time_color_bar[:, ng_data, :] = [0, 0, 255]
 
-            print(0)
-            time_color_bar = cv2.resize(time_color_bar, (800, 80))
-            # time_color_bar = np.repeat(time_color_bar, 100, axis=0)
-            cv2.imshow("bar", time_color_bar)
-            cv2.waitKey(0)
+            # get activation
+            activation = (len(ok_data) + len(ng_data)) / ttl_section
+            activation_val[mac_name] = activation
+            activation_pic[mac_name] = time_color_bar
 
-    return result
+            # print(0)
+            # time_color_bar = cv2.resize(time_color_bar, (800, 80))
+            # # time_color_bar = np.repeat(time_color_bar, 100, axis=0)
+            # cv2.imshow("bar", time_color_bar)
+            # cv2.waitKey(0)
+
+    return yield_val, activation_val, activation_pic
 
 
 if __name__ == "__main__":
     gfc_data = pd.read_csv("F:/Document/GitHub/ZombieZoo/face/000.csv")
-    result = cal_act(gfc_data, from_time="2018-04-28 12:00:00",
-                     to_time="2018-04-28 18:00:00", category="GRanite-C")
+    result = cal_act(gfc_data, from_time="2018-04-29 12:00:00",
+                     to_time="2018-04-30 18:00:00", category="GRanite-C")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)
