@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/face/config_parser/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face/config_parser/parse_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face/config_parser/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face/config_parser/test/config_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/CATEGORY.conf" beforeDir="false" afterPath="$PROJECT_DIR$/face/CATEGORY.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/activation_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/activation_monitor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/activation_monitor_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/activation_monitor_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face/ico.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +22,8 @@
       <file leaf-file-name="activation_monitor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+            <state relative-caret-position="163">
+              <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -36,8 +31,8 @@
       <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+            <state relative-caret-position="228">
+              <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
               <folding>
                 <element signature="e#10#20#0" expanded="true" />
               </folding>
@@ -48,26 +43,34 @@
       <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="88">
+              <caret line="310" selection-start-line="310" selection-end-line="310" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CATEGORY.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/face/CATEGORY.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MACTYPE.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/MACTYPE.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="activation_monitor.ui" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face/activation_monitor.ui">
+      <file leaf-file-name="gfc_activation_calculator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="116">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,15 +80,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="946" column="46" selection-start-line="946" selection-start-column="35" selection-end-line="946" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pickle.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/pickle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1574" column="17" selection-start-line="1574" selection-start-column="17" selection-end-line="1574" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -110,15 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configparser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/configparser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1026">
-              <caret line="764" column="8" selection-start-line="764" selection-start-column="8" selection-end-line="764" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -131,10 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\\</find>
-      <find>&quot;2018/04/19</find>
-      <find>args[&quot;out&quot;]</find>
-      <find>up</find>
       <find>+ &quot;/07/00/00&quot;</find>
       <find>global_</find>
       <find>args[&quot;out&quot;] + args[&quot;category&quot;]</find>
@@ -161,6 +142,10 @@
       <find>ico</find>
       <find>strp</find>
       <find />
+      <find>grA</find>
+      <find>self.category</find>
+      <find>self.config</find>
+      <find>.currentText().lower()</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,</replace>
@@ -179,6 +164,7 @@
       <replace>fuck</replace>
       <replace>self.season_period</replace>
       <replace>self.forecast_len</replace>
+      <replace>self.config</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -215,15 +201,15 @@
         <option value="$PROJECT_DIR$/brain/anticipator/hw/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/holt_winters_prediction.py" />
         <option value="$PROJECT_DIR$/brain/anticipator/test2.py" />
-        <option value="$PROJECT_DIR$/face/activation_monitor.py" />
         <option value="$PROJECT_DIR$/brain/gfc_activation_calculator.py" />
         <option value="$PROJECT_DIR$/face/config_parser/main_config.conf" />
         <option value="$PROJECT_DIR$/face/config.conf" />
         <option value="$PROJECT_DIR$/face/config_parser/parse_config.py" />
         <option value="$PROJECT_DIR$/face/fuck" />
         <option value="$PROJECT_DIR$/face/MACTYPE.conf" />
-        <option value="$PROJECT_DIR$/face/CATEGORY.conf" />
         <option value="$PROJECT_DIR$/face/activation_monitor.ui" />
+        <option value="$PROJECT_DIR$/face/activation_monitor.py" />
+        <option value="$PROJECT_DIR$/face/CATEGORY.conf" />
         <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
       </list>
     </option>
@@ -554,6 +540,11 @@
           <line>21</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/brain/gfc_activation_calculator.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -562,26 +553,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="191" />
+      <option name="time" value="194" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="category_header_prt" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/836067799/math.py" />
-    <entry file="file://$PROJECT_DIR$/brain/anticipator/test3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="152" column="31" lean-forward="true" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="31" />
-          <folding>
-            <element signature="e#288#310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/brain/anticipator/hw/HoltWintersMultiplicative.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/836067799/numpy/core/umath.py" />
     <entry file="file://$PROJECT_DIR$/brain/anticipator/hw/HoltWintersAdditive.py" />
@@ -718,16 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/series.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -809,10 +774,20 @@
     <entry file="file://$PROJECT_DIR$/face/DEFAULT_GFC_DATA_PATH.conf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/CATEGORY.conf">
+    <entry file="file://$PROJECT_DIR$/face/gfc.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/activation_monitor.ui">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        <state relative-caret-position="108">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1847546262/PyQt5/QtWidgets/QComboBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -823,38 +798,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/MACTYPE.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face/activation_monitor.ui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/face/activation_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+        <state relative-caret-position="163">
+          <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brain/gfc_activation_calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/CATEGORY.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/MACTYPE.conf">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        <state relative-caret-position="88">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face/activation_monitor_logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+        <state relative-caret-position="228">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
           <folding>
             <element signature="e#10#20#0" expanded="true" />
           </folding>

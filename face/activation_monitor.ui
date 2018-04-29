@@ -69,46 +69,6 @@
           <bold>true</bold>
          </font>
         </property>
-        <item>
-         <property name="text">
-          <string>GFC-UP</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>GFC-DOWN</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>OQC-UP</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>OQC-DOWN</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>REL-UP</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>REL-DOWN</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>CUBE-UP</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>CUBE-DOWN</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item row="0" column="0">
@@ -121,53 +81,8 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>5</number>
+         <number>-1</number>
         </property>
-        <item>
-         <property name="text">
-          <string>Syrup-A</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Syrup-S</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Lumber</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Granite-C</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Granite-D</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Granite-E</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>BlueBerry</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Angel-P</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Angel-R</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item row="1" column="0">

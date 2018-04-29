@@ -18,13 +18,13 @@ category_header_prt = pd.read_csv("./CATEGORY.conf")
 category_header_prt = [category_header_prt["key"].tolist(), category_header_prt["val"].tolist()]
 category_header = {}
 for i in range(len(category_header_prt[0])):
-    category_header[category_header_prt[0][i]] = category_header_prt[1][i]
+    category_header[category_header_prt[0][i].lower()] = category_header_prt[1][i]
 
 mac_type_prt = pd.read_csv("./MACTYPE.conf")
 mac_type_prt = [mac_type_prt["key"].tolist(), mac_type_prt["val"].tolist()]
 mac_type = {}
 for i in range(len(mac_type_prt[0])):
-    mac_type[mac_type_prt[0][i]] = mac_type_prt[1][i]
+    mac_type[mac_type_prt[0][i].lower()] = mac_type_prt[1][i]
 
 mac_no_total = 99
 default_gfc_data_csv_path = open("./DEFAULT_GFC_DATA_PATH.conf", "rb").read().decode()
@@ -36,8 +36,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
 
+        # add items
+        self.mac_type_select.addItems(mac_type)
+        self.mac_type_select.setCurrentIndex(0)
+
+        self.category_select.addItems(category_header)
+        self.category_select.setCurrentIndex(0)
+
         self.config = self.category_select.currentText().lower()
-        self.category = self.config.split("-")[0].lower()
         self.mac_type = self.mac_type_select.currentText().lower()
         self.mac_name_list = []
         self.activation_status_list = []
@@ -62,7 +68,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def add_all_activation(self):
         for i in range(mac_no_total):
             mac_name = QLabel()
-            mac_name.setText("%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
+            mac_name.setText("%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
             mac_name.setMinimumHeight(80)
             mac_name.setMaximumHeight(160)
             self.gridLayout.addWidget(mac_name, i, 0, 1, 1)
@@ -93,11 +99,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def show_all_activation(self):
         self.config = self.category_select.currentText().lower()
-        self.category = self.config.split("-")[0].lower()
         self.mac_type = self.mac_type_select.currentText().lower()
         for i in range(mac_no_total):
             self.mac_name_list[i].setText(
-                "%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
+                "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
             self.mac_name_list[i].setHidden(False)
             self.activation_status_list[i].setHidden(False)
             self.yield_val_list[i].setHidden(False)
@@ -127,13 +132,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         for i in range(mac_no_total):
             try:
-                yield_val = yield_vals["%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                yield_val = yield_vals["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 yield_val = str(np.round(yield_val * 100, 2)) + " % "
 
-                act_val = act_vals["%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_val = act_vals["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 act_val = str(np.round(act_val * 100, 2)) + " % "
 
-                act_pic = act_pics["%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_pic = act_pics["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 act_pic = cv2.resize(act_pic, (400, 1))
                 height, width, channel = act_pic.shape
                 pile_width = channel * width
