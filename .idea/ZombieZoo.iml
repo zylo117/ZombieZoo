@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.vpy" />
       <excludeFolder url="file://$MODULE_DIR$/target_program" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6 (ZombieZoo) (1)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6.2 (C:\Users\zylo1\AppData\Local\Programs\Python\Python36\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
