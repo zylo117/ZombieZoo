@@ -37,6 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mac_type = self.mac_type_select.currentText()
         self.mac_name_list = []
         self.activation_status_list = []
+        self.yield_val_list = []
         self.activation_val_list = []
 
         self.data_loaded = False
@@ -67,15 +68,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.gridLayout.addWidget(activation_status, i, 1, 1, 1)
             self.activation_status_list.append(activation_status)
 
+            yield_val = QLabel()
+            yield_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
+            yield_val.setText("0 % ")
+            self.gridLayout.addWidget(yield_val, i, 2, 1, 1)
+            self.yield_val_list.append(yield_val)
+
             activation_val = QLabel()
             activation_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
             activation_val.setText("0 % ")
-            self.gridLayout.addWidget(activation_val, i, 2, 1, 1)
+            self.gridLayout.addWidget(activation_val, i, 3, 1, 1)
             self.activation_val_list.append(activation_val)
 
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout.setColumnStretch(1, 9)
         self.gridLayout.setColumnStretch(2, 1)
+        self.gridLayout.setColumnStretch(3, 1)
 
     def change_all_activation(self):
         self.config = self.category_select.currentText()
@@ -86,6 +94,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 "%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
             self.mac_name_list[i].setHidden(False)
             self.activation_status_list[i].setHidden(False)
+            self.yield_val_list[i].setHidden(False)
             self.activation_val_list[i].setHidden(False)
 
     def show_act_val(self, manual=False):
@@ -97,6 +106,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             from_time = self.from_time.dateTime().toString(Qt.ISODate).replace("T", " ")
             to_time = self.to_time.dateTime().toString(Qt.ISODate).replace("T", " ")
 
+            self.from_time_stamp.setText(":".join(from_time.split(" ")[1].split(":")[:2]))
+            to_time_stamp = ":".join(to_time.split(" ")[1].split(":")[:2])
+            if to_time_stamp == "00:00":
+                to_time_stamp = "24:00"
+            self.to_time_stamp.setText(to_time_stamp)
+
             act_result = cal_act(self.gfc_data, from_time, to_time, category=self.config)
         else:
             self.gfc_data = pd.read_csv(default_gfc_data_csv_path)
@@ -106,10 +121,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             try:
                 activation = act_result["%s%s" % (category_header[self.category], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 activation = str(np.round(activation * 100, 2)) + " % "
-                self.activation_val_list[i].setText(activation)
+                self.yield_val_list[i].setText(activation)
             except:
                 self.mac_name_list[i].setHidden(True)
                 self.activation_status_list[i].setHidden(True)
+                self.yield_val_list[i].setHidden(True)
                 self.activation_val_list[i].setHidden(True)
                 continue
 
@@ -136,6 +152,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.from_time.setDateTime(from_time)
         self.to_time.setDateTime(to_time)
+
+    def generate_color_bar(self, time_data):
+        print(0)
 
 app = QApplication(sys.argv)
 mainWindow = MainWindow()
