@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 from PyQt5 import QtCore
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QThread, QEvent
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 
@@ -65,10 +65,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.manual_load_data.clicked.connect(lambda x: self.show_act_val(manual=True))
         self.reload.clicked.connect(self.reload_data)
 
+        # start a mouse pos monitoring thread
+        app.installEventFilter(self)
+        self.mouse = MousePos()
+        self.mouse_window_x = 0
+        self.mouse_window_y = 0
+        self.mouse.start()
+        self.active_labels = []
+
     def add_all_activation(self):
         for i in range(mac_no_total):
             mac_name = QLabel()
-            mac_name.setText("%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
+            mac_name.setText(
+                "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
             mac_name.setMinimumHeight(80)
             mac_name.setMaximumHeight(160)
             self.gridLayout.addWidget(mac_name, i, 0, 1, 1)
@@ -76,6 +85,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.mac_name_list.append(mac_name)
 
             activation_status = QLabel()
+            activation_status.setMouseTracking(True)
+            activation_status.setStatusTip("GFC Activation Status, remains developing")
+            activation_status.setToolTip("DateTime")
             self.gridLayout.addWidget(activation_status, i, 1, 1, 1)
             activation_status.setScaledContents(True)
             self.activation_status_list.append(activation_status)
@@ -130,15 +142,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.gfc_data = pd.read_csv(default_gfc_data_csv_path)
             yield_vals, act_vals, act_pics = cal_act(self.gfc_data, category=self.config)
 
+        self.active_labels = []
         for i in range(mac_no_total):
             try:
-                yield_val = yield_vals["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                yield_val = yield_vals[
+                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 yield_val = str(np.round(yield_val * 100, 2)) + " % "
 
-                act_val = act_vals["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_val = act_vals[
+                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 act_val = str(np.round(act_val * 100, 2)) + " % "
 
-                act_pic = act_pics["%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_pic = act_pics[
+                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
                 act_pic = cv2.resize(act_pic, (400, 1))
                 height, width, channel = act_pic.shape
                 pile_width = channel * width
@@ -148,6 +164,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.yield_val_list[i].setText(yield_val)
                 self.activation_val_list[i].setText(act_val)
                 self.activation_status_list[i].setPixmap(QPixmap.fromImage(q_image))
+
+                self.active_labels.append(i)
             except:
                 self.mac_name_list[i].setHidden(True)
                 self.activation_status_list[i].setHidden(True)
@@ -174,13 +192,64 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # someDT = QtCore.QDateTime(2011, 4, 22, 16, 33, 15)
 
         from_time = datetime.datetime.strptime(str(datetime.date.today()) + " 00:00:00", "%Y-%m-%d %H:%M:%S")
-        to_time = datetime.datetime.strptime(str(datetime.date.today() + datetime.timedelta(days=1)) + " 00:00:00", "%Y-%m-%d %H:%M:%S")
+        to_time = datetime.datetime.strptime(str(datetime.date.today() + datetime.timedelta(days=1)) + " 00:00:00",
+                                             "%Y-%m-%d %H:%M:%S")
 
         self.from_time.setDateTime(from_time)
         self.to_time.setDateTime(to_time)
 
-    def generate_color_bar(self, time_data):
-        print(0)
+    # override the method to track mouse coordinates
+    def eventFilter(self, source, event):
+        if event.type() == QEvent.MouseMove:
+            if event.buttons() == Qt.NoButton or event.buttons() == Qt.LeftButton:
+                pos = event.windowPos()
+                self.mouse_window_x = pos.x()
+                self.mouse_window_y = pos.y()
+            else:
+                pass  # do other stuff
+        return QMainWindow.eventFilter(self, source, event)
+
+    def resizeEvent(self, event):
+        return QMainWindow.resizeEvent(self, event)
+
+
+
+class MousePos(QThread):
+    def __init__(self):
+        super(MousePos, self).__init__()
+
+    def run(self):
+        while True:
+            self.show_co()
+            self.msleep(100)
+
+    def show_co(self):
+        mouse_x = mainWindow.mouse_window_x
+        mouse_y = mainWindow.mouse_window_y
+
+        # do some thing
+        if len(mainWindow.active_labels) > 0:
+            status_x = mainWindow.activation_status_list[mainWindow.active_labels[0]].x()
+            status_y = mainWindow.activation_status_list[mainWindow.active_labels[0]].y()
+            status_width = mainWindow.activation_status_list[mainWindow.active_labels[0]].width()
+            status_height = mainWindow.activation_status_list[mainWindow.active_labels[0]].height()
+
+            # calculate the factor of the current time range
+            factor = (mouse_x - status_x - 10) / status_width
+            if 0 < factor < 1:
+                from_time = mainWindow.from_time.dateTime().toString(Qt.ISODate).replace("T", " ")
+                to_time = mainWindow.to_time.dateTime().toString(Qt.ISODate).replace("T", " ")
+
+                from_time = datetime.datetime.strptime(from_time, "%Y-%m-%d %H:%M:%S")
+                to_time = datetime.datetime.strptime(to_time, "%Y-%m-%d %H:%M:%S")
+
+                delta = (to_time - from_time) * factor
+                select_time = (from_time + delta).strftime("%Y-%m-%d %H:%M:%S")
+
+                # display the current time
+                for l in range(len(mainWindow.active_labels)):
+                    mainWindow.activation_status_list[mainWindow.active_labels[l]].setToolTip(select_time)
+
 
 app = QApplication(sys.argv)
 mainWindow = MainWindow()
