@@ -159,7 +159,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,0,9,0,0,1,1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,0,9,0,0,1,1,1">
       <item>
        <widget class="QLabel" name="label_mac_no_example">
         <property name="minimumSize">
@@ -264,6 +264,24 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="label_osfr_val_example">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>9</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>OS F/R</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="label_yield_val_example">
         <property name="font">
          <font>
@@ -277,7 +295,7 @@
          <string>Yield</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -292,10 +310,10 @@
          </font>
         </property>
         <property name="text">
-         <string>Activation Value</string>
+         <string>Activation</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>

@@ -8,16 +8,31 @@ import numpy as np
 # assume every product was tested for 5 secs
 time_per_unit = 5
 
+# set o/s(open/short, electrical) failure bin no.
+os_bin_conf = open("./BIN_OS.conf", "rb").read().decode().splitlines()[1:]
+os_bin_list = {}
+for b in os_bin_conf:
+    b = b.split(",")
+    os_bin_list[b[0]] = b[1:]
+
+
 def cal_act(gfc_data, from_time=None, to_time=None, category=None):
     if category is not None:
-        gfc_data = gfc_data[gfc_data["機種"].apply(lambda x: str(x).lower()) == category.lower()]
+        category = category.lower()
+        gfc_data = gfc_data[gfc_data["機種"].apply(lambda x: str(x).lower()) == category]
+
+        # get os bin list
+        os_bin = os_bin_list[category]
+    else:
+        # get os bin list
+        os_bin = os_bin_list["default"]
 
     data_by_mac = pd.pivot_table(gfc_data, index=gfc_data["設備"], values=["2D CODE"], aggfunc=len)
     mac_name_list = data_by_mac._stat_axis._data
     yield_val = {}
     activation_val = {}
     activation_pic = {}
-
+    osfr = {}
 
     if from_time is not None and to_time is not None:
         from_time = datetime.datetime.strptime(from_time, "%Y-%m-%d %H:%M:%S")
@@ -64,10 +79,23 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
                 # set ng color
                 time_color_bar[:, ng_data, :] = [0, 0, 255]
 
+            tmp_data["BinNo"] = tmp_data["BinNo"].astype(str)
+            os_map = np.array(tmp_data["BinNo"].apply(lambda x: x in os_bin))
+            os_data = tmp_data[os_map]["日期"].apply(lambda x: int((x - from_time).total_seconds() // time_per_unit))
+            os_data = np.array(os_data)
+            if len(os_data) > 0:
+                os_data[os_data >= ttl_section] = ttl_section - 1
+                # set ng color
+                time_color_bar[:, os_data, :] = [255, 0, 0]
+
             # get activation
             activation = (len(ok_data) + len(ng_data)) / ttl_section
             activation_val[mac_name] = activation
             activation_pic[mac_name] = time_color_bar
+
+            # get os failure rate
+            osfr_qty = np.count_nonzero(os_map)
+            osfr[mac_name] = osfr_qty / ttl_qty
 
             # print(0)
             # time_color_bar = cv2.resize(time_color_bar, (800, 80))
@@ -75,11 +103,11 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
             # cv2.imshow("bar", time_color_bar)
             # cv2.waitKey(0)
 
-    return yield_val, activation_val, activation_pic
+    return yield_val, activation_val, activation_pic, osfr
 
 
 if __name__ == "__main__":
-    gfc_data = pd.read_excel("/Volumes/OSX_Data/Github/ZombieZoo/face/gfc_act.xlsx")
+    gfc_data = pd.read_excel("./gfc_act.xlsx")
     result = cal_act(gfc_data, from_time="2018-5-1 00:00:00",
                      to_time="2018-5-1 11:11:11", category="GRanite-e")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")

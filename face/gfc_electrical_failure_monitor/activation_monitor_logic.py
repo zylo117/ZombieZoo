@@ -2,7 +2,6 @@
 import cv2
 import datetime
 import sys
-import pickle
 import numpy as np
 import pandas as pd
 
@@ -11,22 +10,27 @@ from PyQt5.QtCore import Qt, QThread, QEvent
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 
-from face.activation_monitor import Ui_MainWindow
-from brain.gfc_activation_calculator import cal_act
+from face.gfc_electrical_failure_monitor.activation_monitor import Ui_MainWindow
+from face.gfc_electrical_failure_monitor.gfc_activation_calculator import cal_act
 
+# load category data
 category_header_prt = pd.read_csv("./CATEGORY.conf")
 category_header_prt = [category_header_prt["key"].tolist(), category_header_prt["val"].tolist()]
 category_header = {}
 for i in range(len(category_header_prt[0])):
     category_header[category_header_prt[0][i].lower()] = category_header_prt[1][i]
 
+# load machine type data
 mac_type_prt = pd.read_csv("./MACTYPE.conf")
 mac_type_prt = [mac_type_prt["key"].tolist(), mac_type_prt["val"].tolist()]
 mac_type = {}
 for i in range(len(mac_type_prt[0])):
     mac_type[mac_type_prt[0][i].lower()] = mac_type_prt[1][i]
 
+# set max machine number
 mac_no_total = 99
+
+# set default gfc data path
 default_gfc_data_csv_path = open("./DEFAULT_GFC_DATA_PATH.conf", "rb").read().decode()
 
 
@@ -47,6 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mac_type = self.mac_type_select.currentText().lower()
         self.mac_name_list = []
         self.activation_status_list = []
+        self.osfr_list = []
         self.yield_val_list = []
         self.activation_val_list = []
 
@@ -92,22 +97,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             activation_status.setScaledContents(True)
             self.activation_status_list.append(activation_status)
 
+            osfr = QLabel()
+            osfr.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
+            osfr.setText("0 % ")
+            self.gridLayout.addWidget(osfr, i, 2, 1, 1)
+            self.osfr_list.append(osfr)
+
             yield_val = QLabel()
-            yield_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
+            yield_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
             yield_val.setText("0 % ")
-            self.gridLayout.addWidget(yield_val, i, 2, 1, 1)
+            self.gridLayout.addWidget(yield_val, i, 3, 1, 1)
             self.yield_val_list.append(yield_val)
 
             activation_val = QLabel()
-            activation_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
+            activation_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
             activation_val.setText("0 % ")
-            self.gridLayout.addWidget(activation_val, i, 3, 1, 1)
+            self.gridLayout.addWidget(activation_val, i, 4, 1, 1)
             self.activation_val_list.append(activation_val)
 
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout.setColumnStretch(1, 9)
         self.gridLayout.setColumnStretch(2, 1)
         self.gridLayout.setColumnStretch(3, 1)
+        self.gridLayout.setColumnStretch(4, 1)
 
     def show_all_activation(self):
         self.config = self.category_select.currentText().lower()
@@ -117,6 +129,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX"))
             self.mac_name_list[i].setHidden(False)
             self.activation_status_list[i].setHidden(False)
+            self.osfr_list[i].setHidden(False)
             self.yield_val_list[i].setHidden(False)
             self.activation_val_list[i].setHidden(False)
 
@@ -137,30 +150,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 to_time_stamp = "24:00"
             self.to_time_stamp.setText(to_time_stamp)
 
-            yield_vals, act_vals, act_pics = cal_act(self.gfc_data, from_time, to_time, category=self.config)
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config)
         else:
             self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
-            yield_vals, act_vals, act_pics = cal_act(self.gfc_data, category=self.config)
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config)
 
         self.active_labels = []
         for i in range(mac_no_total):
             try:
-                yield_val = yield_vals[
-                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                mac_name = "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")
+
+                osfr = osfrs[mac_name]
+                osfr = str(np.round(osfr * 100, 2)) + " % "
+
+                yield_val = yield_vals[mac_name]
                 yield_val = str(np.round(yield_val * 100, 2)) + " % "
 
-                act_val = act_vals[
-                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_val = act_vals[mac_name]
                 act_val = str(np.round(act_val * 100, 2)) + " % "
 
-                act_pic = act_pics[
-                    "%s%s" % (category_header[self.config], mac_type[self.mac_type] + str(i + 1).zfill(2) + "XX")]
+                act_pic = act_pics[mac_name]
                 act_pic = cv2.resize(act_pic, (400, 1))
                 height, width, channel = act_pic.shape
                 pile_width = channel * width
                 act_pic = cv2.cvtColor(act_pic, cv2.COLOR_BGR2RGB)
                 q_image = QImage(act_pic.data, width, height, pile_width, QImage.Format_RGB888)
 
+                self.osfr_list[i].setText(osfr)
                 self.yield_val_list[i].setText(yield_val)
                 self.activation_val_list[i].setText(act_val)
                 self.activation_status_list[i].setPixmap(QPixmap.fromImage(q_image))
@@ -169,6 +185,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             except:
                 self.mac_name_list[i].setHidden(True)
                 self.activation_status_list[i].setHidden(True)
+                self.osfr_list[i].setHidden(True)
                 self.yield_val_list[i].setHidden(True)
                 self.activation_val_list[i].setHidden(True)
                 continue
@@ -251,6 +268,7 @@ class MousePos(QThread):
                     mainWindow.activation_status_list[mainWindow.active_labels[l]].setToolTip(select_time)
 
 
+# setup GUI
 app = QApplication(sys.argv)
 mainWindow = MainWindow()
 mainWindow.show()
