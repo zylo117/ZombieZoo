@@ -30,7 +30,8 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
         pd.options.mode.chained_assignment = None
 
         tmp_data = gfc_data[gfc_data["設備"] == mac_name]
-        tmp_data["日期"] = tmp_data["日期"].apply(lambda x: datetime.datetime.strptime(x, "%Y/%m/%d %H:%M:%S"))
+        tmp_data["日期"] = tmp_data["日期"].astype(str)
+        tmp_data["日期"] = tmp_data["日期"].apply(lambda x: datetime.datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
 
         tmp_data = tmp_data.loc[tmp_data["日期"] > from_time].loc[tmp_data["日期"] < to_time]
 
@@ -51,14 +52,17 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
 
             ok_data = tmp_data[tmp_data["BinNo"] == 1]["日期"].apply(lambda x: int((x - from_time).total_seconds() // time_per_unit))
             ok_data = np.array(ok_data)
+            if len(ok_data) > 0:
+                ok_data[ok_data >= ttl_section] = ttl_section - 1
+                # set ok color
+                time_color_bar[:, ok_data, :] = [0, 255, 0]
+
             ng_data = tmp_data[tmp_data["BinNo"] > 1]["日期"].apply(lambda x: int((x - from_time).total_seconds() // time_per_unit))
             ng_data = np.array(ng_data)
-
-            # set ok color
-            time_color_bar[:, ok_data, :] = [0, 255, 0]
-
-            # set ng color
-            time_color_bar[:, ng_data, :] = [0, 0, 255]
+            if len(ng_data) > 0:
+                ng_data[ng_data >= ttl_section] = ttl_section - 1
+                # set ng color
+                time_color_bar[:, ng_data, :] = [0, 0, 255]
 
             # get activation
             activation = (len(ok_data) + len(ng_data)) / ttl_section
@@ -75,8 +79,8 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
 
 
 if __name__ == "__main__":
-    gfc_data = pd.read_csv("F:/Document/GitHub/ZombieZoo/face/000.csv")
-    result = cal_act(gfc_data, from_time="2018-04-29 12:00:00",
-                     to_time="2018-04-30 18:00:00", category="GRanite-C")
+    gfc_data = pd.read_excel("/Volumes/OSX_Data/Github/ZombieZoo/face/gfc_act.xlsx")
+    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00",
+                     to_time="2018-5-1 11:11:11", category="GRanite-e")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)

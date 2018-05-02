@@ -124,7 +124,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.show_all_activation()
 
         if not self.data_loaded:
-            self.gfc_data = pd.read_csv(default_gfc_data_csv_path)
+            self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
             self.data_loaded = True
 
         if manual:
@@ -139,7 +139,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             yield_vals, act_vals, act_pics = cal_act(self.gfc_data, from_time, to_time, category=self.config)
         else:
-            self.gfc_data = pd.read_csv(default_gfc_data_csv_path)
+            self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
             yield_vals, act_vals, act_pics = cal_act(self.gfc_data, category=self.config)
 
         self.active_labels = []
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 continue
 
     def reload_data(self):
-        self.gfc_data = pd.read_csv(default_gfc_data_csv_path)
+        self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
         self.data_loaded = True
 
     def update_date(self):

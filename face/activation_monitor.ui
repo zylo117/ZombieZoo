@@ -34,7 +34,8 @@
          <widget class="QPushButton" name="manual_load_data">
           <property name="font">
            <font>
-            <family>Calibri</family>
+            <family>Lucida Grande</family>
+            <pointsize>10</pointsize>
             <weight>75</weight>
             <bold>true</bold>
            </font>
@@ -48,7 +49,8 @@
          <widget class="QPushButton" name="reload">
           <property name="font">
            <font>
-            <family>Calibri</family>
+            <family>Lucida Grande</family>
+            <pointsize>10</pointsize>
             <weight>75</weight>
             <bold>true</bold>
            </font>
@@ -143,8 +145,8 @@
        <widget class="QPushButton" name="auto_load_data">
         <property name="font">
          <font>
-          <family>Calibri</family>
-          <pointsize>10</pointsize>
+          <family>Lucida Grande</family>
+          <pointsize>13</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -324,8 +326,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>601</width>
-           <height>310</height>
+           <width>597</width>
+           <height>280</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -361,7 +363,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
