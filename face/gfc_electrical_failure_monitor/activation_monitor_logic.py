@@ -5,9 +5,9 @@ import sys
 import numpy as np
 import pandas as pd
 
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtCore import Qt, QThread, QEvent
-from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtGui import QImage, QPixmap, QPalette
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 
 from face.gfc_electrical_failure_monitor.activation_monitor import Ui_MainWindow
@@ -39,6 +39,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
+
+        # add color
+        self.blue = QPalette()
+        self.blue.setColor(QPalette.WindowText, Qt.blue)
+        self.green = QPalette()
+        self.green.setColor(QPalette.WindowText, Qt.green)
+        self.red = QPalette()
+        self.red.setColor(QPalette.WindowText, Qt.red)
+
+        self.label_osfr_val_example.setPalette(self.blue)
+        self.label_yield_val_example.setPalette(self.green)
 
         # add items
         self.mac_type_select.addItems(mac_type)
@@ -93,6 +104,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             activation_status.setMouseTracking(True)
             activation_status.setStatusTip("GFC Activation Status, remains developing")
             activation_status.setToolTip("DateTime")
+            activation_status.setCursor(QtGui.QCursor(QtCore.Qt.CrossCursor))
             self.gridLayout.addWidget(activation_status, i, 1, 1, 1)
             activation_status.setScaledContents(True)
             self.activation_status_list.append(activation_status)
@@ -100,12 +112,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             osfr = QLabel()
             osfr.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
             osfr.setText("0 % ")
+            osfr.setPalette(self.blue)
             self.gridLayout.addWidget(osfr, i, 2, 1, 1)
             self.osfr_list.append(osfr)
 
             yield_val = QLabel()
             yield_val.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
             yield_val.setText("0 % ")
+            yield_val.setPalette(self.green)
             self.gridLayout.addWidget(yield_val, i, 3, 1, 1)
             self.yield_val_list.append(yield_val)
 
