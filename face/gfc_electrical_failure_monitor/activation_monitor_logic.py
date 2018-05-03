@@ -11,7 +11,7 @@ from PyQt5.QtGui import QImage, QPixmap, QPalette
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 
 from face.gfc_electrical_failure_monitor.activation_monitor import Ui_MainWindow
-from face.gfc_electrical_failure_monitor.gfc_activation_calculator import cal_act
+from face.gfc_electrical_failure_monitor.gfc_data_parser import cal_act
 
 # load category data
 category_header_prt = pd.read_csv("./CATEGORY.conf")
