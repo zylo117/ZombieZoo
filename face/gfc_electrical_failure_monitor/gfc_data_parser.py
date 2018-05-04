@@ -4,7 +4,6 @@ import os
 import cv2
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 # assume every product was tested for 5 secs
@@ -29,12 +28,29 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
         gfc_data = gfc_data[gfc_data["機種"].apply(lambda x: str(x).lower()) == category]
 
         # get os bin list
-        os_bin = os_bin_list[category + "/" + mac_type]
+        try:
+            os_bin = os_bin_list[category + "/" + mac_type]
+        except:
+            return False
     else:
         # get os bin list
         os_bin = os_bin_list["default"]
 
-    data_by_mac = pd.pivot_table(gfc_data, index=gfc_data["設備"], values=["機種"], aggfunc=len)
+    # init varibles
+    global global_ttl_qty
+    global global_ok_qty
+    global global_os_qty
+    global_ttl_qty = 0
+    global_ok_qty = 0
+    global_os_qty = 0
+
+    gfc_data_bk = gfc_data.copy()
+    gfc_data_bk["日期"] = gfc_data_bk["日期"].astype(str)
+    gfc_data_bk["日期"] = gfc_data_bk["日期"].apply(lambda x: datetime.datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
+
+    gfc_data_bk = gfc_data_bk.loc[gfc_data_bk["日期"] > from_time].loc[gfc_data_bk["日期"] < to_time]
+
+    data_by_mac = pd.pivot_table(gfc_data_bk, index=gfc_data["設備"], values=["機種"], aggfunc=len)
     mac_name_list = data_by_mac._stat_axis._data
     yield_val = {}
     activation_val = {}
@@ -57,10 +73,6 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
         pd.options.mode.chained_assignment = None
 
         tmp_data = gfc_data[gfc_data["設備"] == mac_name]
-        tmp_data["日期"] = tmp_data["日期"].astype(str)
-        tmp_data["日期"] = tmp_data["日期"].apply(lambda x: datetime.datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
-
-        tmp_data = tmp_data.loc[tmp_data["日期"] > from_time].loc[tmp_data["日期"] < to_time]
 
         ttl_qty = np.count_nonzero(tmp_data["BinNo"] > 0)
         ok_qty = np.count_nonzero(tmp_data["BinNo"] == 1)
@@ -69,6 +81,9 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
             yield_val[mac_name] = 0
 
         else:
+            global_ttl_qty += ttl_qty
+            global_ok_qty += ok_qty
+
             # get yield
             yield_val[mac_name] = ok_qty / ttl_qty
 
@@ -101,6 +116,8 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
                 os_data[os_data >= ttl_section] = ttl_section - 1
                 # set ng color
                 time_color_bar[:, os_data, :] = [255, 0, 0]
+
+                global_os_qty += len(os_data)
 
             # get activation
             activation = (len(ok_data) + len(ng_data)) / ttl_section
@@ -171,6 +188,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
             flat_output.iloc[i * (lines_count + 1)] = None
             flat_output.iloc[i * (lines_count + 1) + 1] = np.hstack([np.arange(1, 13), "Sum/I"])
             # flat_output.iat[i * (bin_count + 1) + bin_count, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
+        flat_output.iloc[-1] = None
 
         # output
         dir = "/".join(output.split("/")[:-1])
@@ -178,7 +196,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None
             os.makedirs(dir)
         flat_output.to_csv(output, header=None, encoding="utf-8")
 
-    return yield_val, activation_val, activation_pic, osfr
+    return yield_val, activation_val, activation_pic, osfr, global_os_qty / global_ttl_qty, global_ok_qty / global_ttl_qty
 
 
 if __name__ == "__main__":

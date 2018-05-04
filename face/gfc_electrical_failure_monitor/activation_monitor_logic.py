@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from face.gfc_electrical_failure_monitor.activation_monitor import Ui_MainWindow
 from face.gfc_electrical_failure_monitor.gfc_data_parser import cal_act
 
+
 # load category data
 category_header_prt = pd.read_csv("./CATEGORY.conf")
 category_header_prt = [category_header_prt["key"].tolist(), category_header_prt["val"].tolist()]
@@ -165,11 +166,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 to_time_stamp = "24:00"
             self.to_time_stamp.setText(to_time_stamp)
 
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
+            ans = cal_act(self.gfc_data, from_time, to_time, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
+            if ans:
+                yield_vals, act_vals, act_pics, osfrs, global_osfr, global_yield = ans
+            else:
+                return False
         else:
             self.gfc_data = pd.read_excel(default_gfc_data_excel_path)
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
-
+            ans = cal_act(self.gfc_data, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
+            if ans:
+                yield_vals, act_vals, act_pics, osfrs, global_osfr, global_yield = ans
+            else:
+                return False
         self.active_labels = []
         for i in range(mac_no_total):
             try:
@@ -204,6 +212,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.yield_val_list[i].setHidden(True)
                 self.activation_val_list[i].setHidden(True)
                 continue
+
+        # add tips
+        self.label_osfr_val_example.setStatusTip("%.2f" % (global_osfr * 100) + " %")
+        self.label_yield_val_example.setStatusTip("%.2f" % (global_yield * 100) + " %")
 
     def reload_data(self):
         self.gfc_data = pd.read_excel(default_gfc_data_excel_path)
