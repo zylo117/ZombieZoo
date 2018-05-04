@@ -128,8 +128,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
                     osfr_by_index[os_index_list] = np.array(os_failure_index_pivot_table["UnitIndex"])
 
                     # osfr_by_index = osfr_by_index / ttl_by_index
-                    osfr_by_index = np.divide(osfr_by_index, ttl_by_index, out=np.zeros_like(osfr_by_index),
-                                     where=ttl_by_index != 0)
+                    # osfr_by_index = np.divide(osfr_by_index, ttl_by_index, out=np.zeros_like(osfr_by_index), where=ttl_by_index != 0)
 
                     osfr_by_index = np.nan_to_num(osfr_by_index)
 
@@ -155,13 +154,13 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
             flat_output.iloc[i * (bin_count + 1) + bin_count, :] = flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1, :].apply(lambda x: np.sum(x))
 
         # change to percentage
-        flat_output = flat_output.applymap(lambda x: "%.3f" % (100 * x) + "%")
+        # flat_output = flat_output.applymap(lambda x: "%.3f" % (100 * x) + "%")
 
         # title and data fixing
         for i in range(len(mac_name_list)):
             flat_output.iloc[i * (bin_count + 1)] = None
             flat_output.iloc[i * (bin_count + 1) + 1] = np.hstack([np.arange(1, 13), "Sum/I"])
-            flat_output.iat[i * (bin_count + 1) + bin_count - 1, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
+            # flat_output.iat[i * (bin_count + 1) + bin_count, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
 
         # output
         flat_output.to_csv(output, header=None, encoding="utf-8")
