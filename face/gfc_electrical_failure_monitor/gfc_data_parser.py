@@ -136,28 +136,32 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
                     osfr_sheet_by_index[i].loc[mac_name] = osfr_by_index
 
         if output is not None:
-            output_data[mac_name] = pd.DataFrame(data=0, index=os_bin, columns=np.arange(1, 13).astype(str))
+            output_data[mac_name] = pd.DataFrame(data=0, index=os_bin, columns=np.arange(1, 14).astype(str))
             for i in range(len(os_bin)):
-                output_data[mac_name].iloc[i] = np.array(osfr_sheet_by_index[i].loc[mac_name])
+                # add the Sum/I
+                output_data[mac_name].iloc[i] = np.hstack([osfr_sheet_by_index[i].loc[mac_name], np.sum(osfr_sheet_by_index[i].loc[mac_name])])
 
     if output is not None:
         # transform output_data to flat data
         flat_index = category
         for mac_name in mac_name_list:
-            flat_index = np.hstack((flat_index, mac_name, os_bin, "Sum", ""))
-        flat_output = pd.DataFrame(data=0, index=flat_index, columns=np.arange(1, 13).astype(str))
-        bin_count = len(os_bin) + 2  # 7
+            flat_index = np.hstack((flat_index, mac_name, os_bin, "Sum/B", ""))
+        flat_output = pd.DataFrame(data=0, index=flat_index, columns=np.arange(1, 14).astype(str))
+        bin_count = len(os_bin) + 2  # 8
         for i in range(len(mac_name_list)):
             flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1] = output_data[mac_name_list[i]]
-            flat_output.iloc[i * (bin_count + 1) + bin_count] = flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1, :].apply(lambda x: np.sum(x))
+
+            # calculate the Sum/B
+            flat_output.iloc[i * (bin_count + 1) + bin_count, :] = flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1, :].apply(lambda x: np.sum(x))
 
         # change to percentage
-        flat_output = flat_output.applymap(lambda x: "%.2f" % (100 * x) + "%")
+        flat_output = flat_output.applymap(lambda x: "%.3f" % (100 * x) + "%")
 
         # title and data fixing
         for i in range(len(mac_name_list)):
             flat_output.iloc[i * (bin_count + 1)] = None
-            flat_output.iloc[i * (bin_count + 1) + 1] = np.arange(1, 13)
+            flat_output.iloc[i * (bin_count + 1) + 1] = np.hstack([np.arange(1, 13), "Sum/I"])
+            flat_output.iat[i * (bin_count + 1) + bin_count - 1, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
 
         # output
         flat_output.to_csv(output, header=None, encoding="utf-8")
@@ -167,6 +171,6 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
 
 if __name__ == "__main__":
     gfc_data = pd.read_excel("./gfc_act_simple.xlsx")
-    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 01:11:11", category="GRanite-e", output="./result.csv")
+    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 1:00:00", category="GRanite-e", output="./result.csv")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)
