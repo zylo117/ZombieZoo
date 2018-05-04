@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,8 +14,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ZombieZoo$activation_monitor_logic.coverage" NAME="activation_monitor_logic Coverage Results" MODIFIED="1525419258637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face" />
-    <SUITE FILE_PATH="coverage/ZombieZoo$gfc_activation_calculator.coverage" NAME="gfc_activation_calculator Coverage Results" MODIFIED="1525419254878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/" />
-    <SUITE FILE_PATH="coverage/ZombieZoo$activation_monitor_logic__1_.coverage" NAME="activation_monitor_logic (1) Coverage Results" MODIFIED="1525419756754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
+    <SUITE FILE_PATH="coverage/ZombieZoo$gfc_activation_calculator.coverage" NAME="gfc_activation_calculator Coverage Results" MODIFIED="1525429879975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/" />
+    <SUITE FILE_PATH="coverage/ZombieZoo$activation_monitor_logic__1_.coverage" NAME="activation_monitor_logic (1) Coverage Results" MODIFIED="1525423227332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ZombieZoo" />
@@ -25,8 +25,8 @@
       <file leaf-file-name="gfc_data_parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="167" column="35" lean-forward="true" selection-start-line="167" selection-start-column="35" selection-end-line="167" selection-end-column="35" />
+            <state relative-caret-position="93">
+              <caret line="174" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -37,8 +37,8 @@
       <file leaf-file-name="result.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            <state relative-caret-position="150">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -46,7 +46,7 @@
       <file leaf-file-name="indexing.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/indexing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="25335">
               <caret line="1712" selection-start-line="1712" selection-end-line="1712" />
             </state>
           </provider>
@@ -55,7 +55,7 @@
       <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="4650">
               <caret line="310" selection-start-line="310" selection-end-line="310" />
             </state>
           </provider>
@@ -64,20 +64,11 @@
       <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="169" column="111" selection-start-line="169" selection-start-column="111" selection-end-line="169" selection-end-column="111" />
+            <state relative-caret-position="2220">
+              <caret line="254" column="28" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
               <folding>
                 <element signature="e#10#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DEFAULT_GFC_DATA_PATH.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_GFC_DATA_PATH.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -222,6 +213,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.activation_monitor_logic (1)">
+  <component name="RunManager" selected="Python.gfc_activation_calculator">
     <configuration name="ZombieZoo" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="ZombieZoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -431,9 +422,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gfc_activation_calculator" />
         <item itemvalue="Python.activation_monitor_logic (1)" />
         <item itemvalue="Python.activation_monitor_logic" />
-        <item itemvalue="Python.gfc_activation_calculator" />
         <item itemvalue="Python.parse_config" />
         <item itemvalue="Python.test2" />
       </list>
@@ -462,7 +453,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1360" height="745" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
@@ -470,43 +460,43 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3287037" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.31944445" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.1558642" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20333838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20637329" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32407406" />
-      <window_info anchor="right" auto_hide="true" x="-1600" y="23" width="1600" height="877" id="SciView" order="5" type="FLOATING" visible="true" weight="0.29210925" />
+      <window_info anchor="right" auto_hide="true" x="-1600" y="23" width="1600" height="877" id="SciView" order="5" show_stripe_button="false" type="FLOATING" weight="0.29210925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.3287037" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37962964" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47067901" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32407406" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.3287037" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20930232" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.3344652" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32597622" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.20543294" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32597622" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,8 +543,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py</url>
-          <line>169</line>
+          <line>174</line>
           <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="265" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -564,7 +559,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="263" />
+      <option name="time" value="268" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -686,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_GFC_DATA_PATH.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/python_stubs/-1199943127/PyQt5/QtGui/QPalette.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -730,7 +718,7 @@
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="4650">
           <caret line="310" selection-start-line="310" selection-end-line="310" />
         </state>
       </provider>
@@ -749,23 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="169" column="111" selection-start-line="169" selection-start-column="111" selection-end-line="169" selection-end-column="111" />
-          <folding>
-            <element signature="e#10#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -775,7 +746,7 @@
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="25335">
           <caret line="1712" selection-start-line="1712" selection-end-line="1712" />
         </state>
       </provider>
@@ -787,10 +758,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_GFC_DATA_PATH.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="254" column="28" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
+          <folding>
+            <element signature="e#10#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="167" column="35" lean-forward="true" selection-start-line="167" selection-start-column="35" selection-end-line="167" selection-end-column="35" />
+        <state relative-caret-position="93">
+          <caret line="174" selection-start-line="174" selection-end-line="174" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

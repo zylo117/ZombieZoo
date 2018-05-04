@@ -36,6 +36,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
     activation_val = {}
     activation_pic = {}
     osfr = {}
+    ttl_qty_by_index = {}
     osfr_sheet_by_index = [pd.DataFrame(index=mac_name_list, columns=np.arange(1, 13), data=0) for i in range(len(os_bin))]
 
     if from_time is not None and to_time is not None:
@@ -116,6 +117,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
             ttl_index_list = ttl_index_pivot_table._stat_axis._data.astype(int) - 1
             ttl_by_index = np.zeros(12)
             ttl_by_index[ttl_index_list] = np.array(ttl_index_pivot_table["UnitIndex"])
+            ttl_qty_by_index[mac_name] = np.hstack([ttl_by_index, np.sum(ttl_by_index)])
 
             # calculate every bin failure rate
             os_data_backup["BinNo"] = os_data_backup["BinNo"].astype(str)
@@ -145,22 +147,25 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
         # transform output_data to flat data
         flat_index = category
         for mac_name in mac_name_list:
-            flat_index = np.hstack((flat_index, mac_name, os_bin, "Sum/B", ""))
+            flat_index = np.hstack((flat_index, mac_name, os_bin, "Sum/B", "Total", ""))
         flat_output = pd.DataFrame(data=0, index=flat_index, columns=np.arange(1, 14).astype(str))
-        bin_count = len(os_bin) + 2  # 8
+        lines_count = len(os_bin) + 3  # 9
         for i in range(len(mac_name_list)):
-            flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1] = output_data[mac_name_list[i]]
+            flat_output.iloc[i * (lines_count + 1) + 2: i * (lines_count + 1) + lines_count - 1] = output_data[mac_name_list[i]]
 
             # calculate the Sum/B
-            flat_output.iloc[i * (bin_count + 1) + bin_count, :] = flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1, :].apply(lambda x: np.sum(x))
+            flat_output.iloc[i * (lines_count + 1) + lines_count - 1, :] = flat_output.iloc[i * (lines_count + 1) + 2: i * (lines_count + 1) + lines_count - 1, :].apply(lambda x: np.sum(x))
+
+            # calculate the Total
+            flat_output.iloc[i * (lines_count + 1) + lines_count, :] = ttl_qty_by_index[mac_name_list[i]]
 
         # change to percentage
         # flat_output = flat_output.applymap(lambda x: "%.3f" % (100 * x) + "%")
 
         # title and data fixing
         for i in range(len(mac_name_list)):
-            flat_output.iloc[i * (bin_count + 1)] = None
-            flat_output.iloc[i * (bin_count + 1) + 1] = np.hstack([np.arange(1, 13), "Sum/I"])
+            flat_output.iloc[i * (lines_count + 1)] = None
+            flat_output.iloc[i * (lines_count + 1) + 1] = np.hstack([np.arange(1, 13), "Sum/I"])
             # flat_output.iat[i * (bin_count + 1) + bin_count, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
 
         # output
