@@ -3,6 +3,7 @@ import datetime
 import cv2
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 # assume every product was tested for 5 secs
@@ -17,7 +18,7 @@ for b in os_bin_conf:
     os_bin_list[b[0]] = b[1:]
 
 
-def cal_act(gfc_data, from_time=None, to_time=None, category=None):
+def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
     if category is not None:
         category = category.lower()
         gfc_data = gfc_data[gfc_data["機種"].apply(lambda x: str(x).lower()) == category]
@@ -34,7 +35,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
     activation_val = {}
     activation_pic = {}
     osfr = {}
-    osfr_sheet_by_index = [pd.DataFrame(index=mac_name_list, columns=np.arange(1, 13)) for i in range(len(os_bin))]
+    osfr_sheet_by_index = [pd.DataFrame(index=mac_name_list, columns=np.arange(1, 13), data=0) for i in range(len(os_bin))]
 
     if from_time is not None and to_time is not None:
         from_time = datetime.datetime.strptime(from_time, "%Y-%m-%d %H:%M:%S")
@@ -42,6 +43,9 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
     else:
         from_time = datetime.datetime.strptime(str(datetime.date.today()) + " 00:00:00", "%Y-%m-%d %H:%M:%S")
         to_time = datetime.datetime.strptime(str(datetime.date.today() + datetime.timedelta(days=1)) + " 00:00:00", "%Y-%m-%d %H:%M:%S")
+
+    # output the final data
+    output_data = {}
 
     for mac_name in mac_name_list:
         pd.options.mode.chained_assignment = None
@@ -97,6 +101,11 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
             activation_val[mac_name] = activation
             activation_pic[mac_name] = time_color_bar
 
+            # time_color_bar = cv2.resize(time_color_bar, (800, 80))
+            # # time_color_bar = np.repeat(time_color_bar, 100, axis=0)
+            # cv2.imshow("bar", time_color_bar)
+            # cv2.waitKey(0)
+
             # get os failure rate
             osfr_qty = np.count_nonzero(os_map)
             osfr[mac_name] = osfr_qty / ttl_qty
@@ -104,6 +113,8 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
             # get os failure rate by index
             ttl_index_pivot_table = pd.pivot_table(tmp_data, index=tmp_data["UnitIndex"], values=["UnitIndex"], aggfunc=len)
             ttl_index_list = ttl_index_pivot_table._stat_axis._data.astype(int) - 1
+            ttl_by_index = np.zeros(12)
+            ttl_by_index[ttl_index_list] = np.array(ttl_index_pivot_table["UnitIndex"])
 
             # calculate every bin failure rate
             os_data_backup["BinNo"] = os_data_backup["BinNo"].astype(str)
@@ -112,22 +123,49 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None):
                 os_failure_index_pivot_table = pd.pivot_table(os_failure_index_data, index=os_failure_index_data["UnitIndex"], values=["UnitIndex"], aggfunc=len)
                 os_index_list = os_failure_index_pivot_table._stat_axis._data.astype(int) - 1
 
-                osfr_by_index = np.zeros(12)
-                osfr_by_index[os_index_list] = np.array(os_failure_index_pivot_table["UnitIndex"] / ttl_index_pivot_table["UnitIndex"])
+                if len(os_index_list) > 0:
+                    osfr_by_index = np.zeros(12)
+                    osfr_by_index[os_index_list] = np.array(os_failure_index_pivot_table["UnitIndex"])
 
-                osfr_sheet_by_index[i].loc[mac_name] = osfr_by_index
+                    # osfr_by_index = osfr_by_index / ttl_by_index
+                    osfr_by_index = np.divide(osfr_by_index, ttl_by_index, out=np.zeros_like(osfr_by_index),
+                                     where=ttl_by_index != 0)
 
-            # time_color_bar = cv2.resize(time_color_bar, (800, 80))
-            # # time_color_bar = np.repeat(time_color_bar, 100, axis=0)
-            # cv2.imshow("bar", time_color_bar)
-            # cv2.waitKey(0)
+                    osfr_by_index = np.nan_to_num(osfr_by_index)
+
+                    osfr_sheet_by_index[i].loc[mac_name] = osfr_by_index
+
+        if output is not None:
+            output_data[mac_name] = pd.DataFrame(data=0, index=os_bin, columns=np.arange(1, 13).astype(str))
+            for i in range(len(os_bin)):
+                output_data[mac_name].iloc[i] = np.array(osfr_sheet_by_index[i].loc[mac_name])
+
+    if output is not None:
+        # transform output_data to flat data
+        flat_index = "Electrical Failure Rate by GFC Index"
+        for mac_name in mac_name_list:
+            flat_index = np.hstack((flat_index, mac_name, os_bin))
+        flat_output = pd.DataFrame(data=0, index=flat_index, columns=np.arange(1, 13).astype(str))
+        bin_count = len(os_bin)
+        for i in range(len(mac_name_list)):
+            flat_output.iloc[i * bin_count + 1: i * bin_count + bin_count] = output_data[mac_name_list[i]]
+
+        # change to percentage
+        flat_output = flat_output.applymap(lambda x: "%.2f"% (100 * x) + "%")
+
+        # title and data fixing
+        flat_output.iloc[0] = np.arange(1, 13)
+        for i in range(len(mac_name_list)):
+            flat_output.iloc[i * (bin_count + 1) + 1] = None
+
+        # output
+        flat_output.to_csv(output, header=None, encoding="utf-8")
 
     return yield_val, activation_val, activation_pic, osfr
 
 
 if __name__ == "__main__":
     gfc_data = pd.read_excel("./gfc_act.xlsx")
-    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00",
-                     to_time="2018-5-1 18:11:11", category="GRanite-e")
+    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 11:11:11", category="GRanite-e", output="./result.csv")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)
