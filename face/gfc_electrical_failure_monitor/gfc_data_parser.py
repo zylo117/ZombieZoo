@@ -1,4 +1,5 @@
 import datetime
+import os
 
 import cv2
 import pandas as pd
@@ -163,6 +164,9 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
             # flat_output.iat[i * (bin_count + 1) + bin_count, 12] = "%.3f" % (100 * osfr[mac_name_list[i]]) + "%"
 
         # output
+        dir = "/".join(output.split("/")[:-1])
+        if not os.path.exists(dir):
+            os.makedirs(dir)
         flat_output.to_csv(output, header=None, encoding="utf-8")
 
     return yield_val, activation_val, activation_pic, osfr

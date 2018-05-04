@@ -164,10 +164,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 to_time_stamp = "24:00"
             self.to_time_stamp.setText(to_time_stamp)
 
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config)
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config, output="./out/%s_%s.csv" % (self.config, self.mac_type))
         else:
             self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config)
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config, output="./out/%s_%s.csv" % (self.config, self.mac_type))
 
         self.active_labels = []
         for i in range(mac_no_total):
