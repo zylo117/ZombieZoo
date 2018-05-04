@@ -142,21 +142,22 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
 
     if output is not None:
         # transform output_data to flat data
-        flat_index = "Electrical Failure Rate by GFC Index"
+        flat_index = category
         for mac_name in mac_name_list:
-            flat_index = np.hstack((flat_index, mac_name, os_bin))
+            flat_index = np.hstack((flat_index, mac_name, os_bin, "Sum", ""))
         flat_output = pd.DataFrame(data=0, index=flat_index, columns=np.arange(1, 13).astype(str))
-        bin_count = len(os_bin)
+        bin_count = len(os_bin) + 2  # 7
         for i in range(len(mac_name_list)):
-            flat_output.iloc[i * bin_count + 1: i * bin_count + bin_count] = output_data[mac_name_list[i]]
+            flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1] = output_data[mac_name_list[i]]
+            flat_output.iloc[i * (bin_count + 1) + bin_count] = flat_output.iloc[i * (bin_count + 1) + 2: i * (bin_count + 1) + bin_count - 1, :].apply(lambda x: np.sum(x))
 
         # change to percentage
-        flat_output = flat_output.applymap(lambda x: "%.2f"% (100 * x) + "%")
+        flat_output = flat_output.applymap(lambda x: "%.2f" % (100 * x) + "%")
 
         # title and data fixing
-        flat_output.iloc[0] = np.arange(1, 13)
         for i in range(len(mac_name_list)):
-            flat_output.iloc[i * (bin_count + 1) + 1] = None
+            flat_output.iloc[i * (bin_count + 1)] = None
+            flat_output.iloc[i * (bin_count + 1) + 1] = np.arange(1, 13)
 
         # output
         flat_output.to_csv(output, header=None, encoding="utf-8")
@@ -165,7 +166,7 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
 
 
 if __name__ == "__main__":
-    gfc_data = pd.read_excel("./gfc_act.xlsx")
-    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 11:11:11", category="GRanite-e", output="./result.csv")
+    gfc_data = pd.read_excel("./gfc_act_simple.xlsx")
+    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 01:11:11", category="GRanite-e", output="./result.csv")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)
