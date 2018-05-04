@@ -31,7 +31,8 @@ for i in range(len(mac_type_prt[0])):
 mac_no_total = 99
 
 # set default gfc data path
-default_gfc_data_csv_path = open("./DEFAULT_GFC_DATA_PATH.conf", "rb").read().decode()
+default_gfc_data_excel_path = open("./DEFAULT_GFC_DATA_PATH.conf", "rb").read().decode()
+default_output_csv_path = open("./DEFAULT_OUTPUT_PATH.conf", "rb").read().decode()
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -151,7 +152,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.show_all_activation()
 
         if not self.data_loaded:
-            self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
+            self.gfc_data = pd.read_excel(default_gfc_data_excel_path)
             self.data_loaded = True
 
         if manual:
@@ -164,10 +165,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 to_time_stamp = "24:00"
             self.to_time_stamp.setText(to_time_stamp)
 
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config, output="./out/%s_%s.csv" % (self.config, self.mac_type))
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, from_time, to_time, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
         else:
-            self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
-            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config, output="./out/%s_%s.csv" % (self.config, self.mac_type))
+            self.gfc_data = pd.read_excel(default_gfc_data_excel_path)
+            yield_vals, act_vals, act_pics, osfrs = cal_act(self.gfc_data, category=self.config, mac_type=self.mac_type, output="%s%s_%s.csv" % (default_output_csv_path, self.config, self.mac_type))
 
         self.active_labels = []
         for i in range(mac_no_total):
@@ -205,7 +206,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 continue
 
     def reload_data(self):
-        self.gfc_data = pd.read_excel(default_gfc_data_csv_path)
+        self.gfc_data = pd.read_excel(default_gfc_data_excel_path)
         self.data_loaded = True
 
     def update_date(self):

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ffcf112-bd85-4f8c-8582-cd57adb8116a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_OUTPUT_PATH.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ZombieZoo$activation_monitor_logic.coverage" NAME="activation_monitor_logic Coverage Results" MODIFIED="1525419258637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face" />
-    <SUITE FILE_PATH="coverage/ZombieZoo$gfc_activation_calculator.coverage" NAME="gfc_activation_calculator Coverage Results" MODIFIED="1525429879975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/" />
+    <SUITE FILE_PATH="coverage/ZombieZoo$gfc_activation_calculator.coverage" NAME="gfc_activation_calculator Coverage Results" MODIFIED="1525431241165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/" />
     <SUITE FILE_PATH="coverage/ZombieZoo$activation_monitor_logic__1_.coverage" NAME="activation_monitor_logic (1) Coverage Results" MODIFIED="1525423227332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
   </component>
   <component name="FavoritesManager">
@@ -25,20 +30,11 @@
       <file leaf-file-name="gfc_data_parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="174" selection-start-line="174" selection-end-line="174" />
+            <state relative-caret-position="273">
+              <caret line="39" column="23" lean-forward="true" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -64,8 +60,8 @@
       <file leaf-file-name="activation_monitor_logic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="254" column="28" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
+            <state relative-caret-position="50">
+              <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
               <folding>
                 <element signature="e#10#20#0" expanded="true" />
               </folding>
@@ -183,10 +179,11 @@
         <option value="$PROJECT_DIR$/face/CATEGORY.conf" />
         <option value="$PROJECT_DIR$/face/activation_monitor_logic.py" />
         <option value="$PROJECT_DIR$/brain/gfc_activation_calculator.py" />
-        <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf" />
         <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_GFC_DATA_PATH.conf" />
         <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_activation_calculator.py" />
+        <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_OUTPUT_PATH.conf" />
         <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py" />
+        <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf" />
         <option value="$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py" />
       </list>
     </option>
@@ -255,15 +252,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
+      <recent name="F:\Document\GitHub\ZombieZoo\face" />
+      <recent name="D:\workspace\ZombieZoo\zombie" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
       <recent name="D:\workspace\ZombieZoo\brain\anticipator" />
       <recent name="D:\workspace\ZombieZoo\brain" />
-      <recent name="D:\workspace\ZombieZoo\zombie" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/face/gfc_electrical_failure_monitor" />
-      <recent name="F:\Document\GitHub\ZombieZoo\face" />
       <recent name="D:\workspace\ZombieZoo\zombie" />
     </key>
   </component>
@@ -453,6 +450,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1360" height="745" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.3293718" />
@@ -463,13 +461,13 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.1558642" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3293718" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20637329" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25948405" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" auto_hide="true" x="-1600" y="23" width="1600" height="877" id="SciView" order="5" show_stripe_button="false" type="FLOATING" weight="0.29210925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32933232" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47067901" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32407406" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -543,13 +541,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py</url>
-          <line>174</line>
+          <line>178</line>
           <option name="timeStamp" value="252" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py</url>
-          <line>165</line>
+          <line>169</line>
           <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="271" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -559,11 +562,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="268" />
+      <option name="time" value="272" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/job/merge_data.py" />
     <entry file="file://C:/Program Files (x86)/Python36-32/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/.vpy/Lib/site-packages/seasonal/seasonal.py" />
     <entry file="file://$PROJECT_DIR$/brain/anticipator/test2.py">
@@ -667,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -765,27 +760,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/DEFAULT_OUTPUT_PATH.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/BIN_OS.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/activation_monitor_logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="254" column="28" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
+        <state relative-caret-position="50">
+          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
           <folding>
             <element signature="e#10#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/result.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/face/gfc_electrical_failure_monitor/gfc_data_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="273">
+          <caret line="39" column="23" lean-forward="true" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

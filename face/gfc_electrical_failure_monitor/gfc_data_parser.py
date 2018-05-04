@@ -15,17 +15,21 @@ total_index_qty = 12
 os_bin_conf = open("./BIN_OS.conf", "rb").read().decode().splitlines()[1:]
 os_bin_list = {}
 for b in os_bin_conf:
-    b = b.split(",")
-    os_bin_list[b[0]] = b[1:]
+    combo, bin = b.split(":")
+
+    bin = bin.split(",")
+    os_bin_list[combo] = bin
 
 
-def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
-    if category is not None:
+def cal_act(gfc_data, from_time=None, to_time=None, category=None, mac_type=None, output=None):
+    if category is not None and mac_type is not None:
         category = category.lower()
+        mac_type = mac_type.lower()
+
         gfc_data = gfc_data[gfc_data["機種"].apply(lambda x: str(x).lower()) == category]
 
         # get os bin list
-        os_bin = os_bin_list[category]
+        os_bin = os_bin_list[category + "/" + mac_type]
     else:
         # get os bin list
         os_bin = os_bin_list["default"]
@@ -179,6 +183,6 @@ def cal_act(gfc_data, from_time=None, to_time=None, category=None, output=None):
 
 if __name__ == "__main__":
     gfc_data = pd.read_excel("./gfc_act_simple.xlsx")
-    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 1:00:00", category="GRanite-e", output="./result.csv")
+    result = cal_act(gfc_data, from_time="2018-5-1 00:00:00", to_time="2018-5-1 1:00:00", category="GRanite-e", mac_type="gfc-down", output="./result.csv")
     # cal_act("F:/Document/GitHub/ZombieZoo/face/000.csv")
     print(0)

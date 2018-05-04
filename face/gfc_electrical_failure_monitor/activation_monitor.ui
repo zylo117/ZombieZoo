@@ -34,7 +34,7 @@
          <widget class="QPushButton" name="manual_load_data">
           <property name="font">
            <font>
-            <family>Lucida Grande</family>
+            <family>Helvetica Neue</family>
             <pointsize>10</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -49,7 +49,7 @@
          <widget class="QPushButton" name="reload">
           <property name="font">
            <font>
-            <family>Lucida Grande</family>
+            <family>Helvetica Neue</family>
             <pointsize>10</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -66,7 +66,7 @@
        <widget class="QComboBox" name="mac_type_select">
         <property name="font">
          <font>
-          <family>Calibri</family>
+          <family>Helvetica Neue</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -77,7 +77,7 @@
        <widget class="QComboBox" name="category_select">
         <property name="font">
          <font>
-          <family>Calibri</family>
+          <family>Helvetica Neue</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -91,7 +91,7 @@
        <widget class="QDateTimeEdit" name="from_time">
         <property name="font">
          <font>
-          <family>Calibri</family>
+          <family>Helvetica Neue</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -118,7 +118,7 @@
        <widget class="QDateTimeEdit" name="to_time">
         <property name="font">
          <font>
-          <family>Calibri</family>
+          <family>Helvetica Neue</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -145,7 +145,7 @@
        <widget class="QPushButton" name="auto_load_data">
         <property name="font">
          <font>
-          <family>Lucida Grande</family>
+          <family>Helvetica Neue</family>
           <pointsize>13</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -160,8 +160,13 @@
     </item>
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <family>Helvetica Neue</family>
+       </font>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -192,7 +197,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>9</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -207,7 +212,7 @@
            <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -221,7 +226,7 @@
            <widget class="QLabel" name="from_time_stamp">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>6</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -239,7 +244,7 @@
            <widget class="QLabel" name="label_activation_status_example">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>9</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -257,7 +262,7 @@
            <widget class="QLabel" name="to_time_stamp">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>6</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -275,7 +280,7 @@
            <widget class="QLabel" name="label_4">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -289,7 +294,7 @@
            <widget class="QLabel" name="label_osfr_val_example">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>9</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -307,7 +312,7 @@
            <widget class="QLabel" name="label_yield_val_example">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>9</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -325,7 +330,7 @@
            <widget class="QLabel" name="label_activation_val_example">
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <pointsize>9</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -350,7 +355,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Calibri</family>
+              <family>Helvetica Neue</family>
               <weight>75</weight>
               <bold>true</bold>
              </font>
